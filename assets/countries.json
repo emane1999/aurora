@@ -1,0 +1,1040 @@
+[
+    {
+        "abbreviation": "AD",
+        "name": "Andorra",
+        "flag": "ad.png",
+        "code": "+376"
+    },
+    {
+        "abbreviation": "AE",
+        "name": "United Arab Emirates",
+        "flag": "ae.png",
+        "code": "+971"
+    },
+    {
+        "abbreviation": "AF",
+        "name": "Afghanistan",
+        "flag": "af.png",
+        "code": "+93"
+    },
+    {
+        "abbreviation": "AG",
+        "name": "Antigua and Barbuda",
+        "flag": "ag.png",
+        "code": "+1-268"
+    },
+    {
+        "abbreviation": "AI",
+        "name": "Anguilla",
+        "flag": "ai.png",
+        "code": "+1-264"
+    },
+    {
+        "abbreviation": "AL",
+        "name": "Albania",
+        "flag": "al.png",
+        "code": "+355"
+    },
+    {
+        "abbreviation": "AM",
+        "name": "Armenia",
+        "flag": "am.png",
+        "code": "+374"
+    },
+    {
+        "abbreviation": "AO",
+        "name": "Angola",
+        "flag": "ao.png",
+        "code": "+244"
+    },
+    {
+        "abbreviation": "AQ",
+        "name": "Antarctica",
+        "flag": "aq.png",
+        "code": "+672"
+    },
+    {
+        "abbreviation": "AR",
+        "name": "Argentina",
+        "flag": "ar.png",
+        "code": "+54"
+    },
+    {
+        "abbreviation": "AS",
+        "name": "American Samoa",
+        "flag": "as.png",
+        "code": "+1-684"
+    },
+    {
+        "abbreviation": "AT",
+        "name": "Austria",
+        "flag": "at.png",
+        "code": "+43"
+    },
+    {
+        "abbreviation": "AU",
+        "name": "Australia",
+        "flag": "au.png",
+        "code": "+61"
+    },
+    {
+        "abbreviation": "AW",
+        "name": "Aruba",
+        "flag": "aw.png",
+        "code": "+297"
+    },
+    {
+        "abbreviation": "AX",
+        "name": "Åland Islands",
+        "flag": "ax.png",
+        "code": "+358-18"
+    },
+    {
+        "abbreviation": "JO",
+        "name": "Jordan",
+        "flag": "jo.png",
+        "code": "+962"
+    },
+    {
+        "abbreviation": "BA",
+        "name": "Bosnia and Herzegovina",
+        "flag": "ba.png",
+        "code": "+387"
+    },
+    {
+        "abbreviation": "BB",
+        "name": "Barbados",
+        "flag": "bb.png",
+        "code": "+1-246"
+    },
+    {
+        "abbreviation": "BD",
+        "name": "Bangladesh",
+        "flag": "bd.png",
+        "code": "+880"
+    },
+    {
+        "abbreviation": "BE",
+        "name": "Belgium",
+        "flag": "be.png",
+        "code": "+32"
+    },
+    {
+        "abbreviation": "BF",
+        "name": "Burkina Faso",
+        "flag": "bf.png",
+        "code": "+226"
+    },
+    {
+        "abbreviation": "BG",
+        "name": "Bulgaria",
+        "flag": "bg.png",
+        "code": "+359"
+    },
+    {
+        "abbreviation": "BH",
+        "name": "Bahrain",
+        "flag": "bh.png",
+        "code": "+973"
+    },
+    {
+        "abbreviation": "BI",
+        "name": "Burundi",
+        "flag": "bi.png",
+        "code": "+257"
+    },
+    {
+        "abbreviation": "BJ",
+        "name": "Benin",
+        "flag": "bj.png",
+        "code": "+229"
+    },
+    {
+        "abbreviation": "BL",
+        "name": "Saint Barthélemy",
+        "flag": "bl.png",
+        "code": "+590"
+    },
+    {
+        "abbreviation": "BM",
+        "name": "Bermuda",
+        "flag": "bm.png",
+        "code": "+1-441"
+    },
+    {
+        "abbreviation": "BN",
+        "name": "Brunei Darussalam",
+        "flag": "bn.png",
+        "code": "+673"
+    },
+    {
+        "abbreviation": "BO",
+        "name": "Bolivia",
+        "flag": "bo.png",
+        "code": "+591"
+    },
+    {
+        "abbreviation": "BQ",
+        "name": "Caribbean Netherlands",
+        "flag": "bq.png",
+        "code": "+599"
+    },
+    {
+        "abbreviation": "BR",
+        "name": "Brazil",
+        "flag": "br.png",
+        "code": "+55"
+    },
+    {
+        "abbreviation": "BS",
+        "name": "Bahamas",
+        "flag": "bs.png",
+        "code": "+1-242"
+    },
+    {
+        "abbreviation": "BT",
+        "name": "Bhutan",
+        "flag": "bt.png",
+        "code": "+975"
+    },
+    {
+        "abbreviation": "BV",
+        "name": "Bouvet Island",
+        "flag": "bv.png",
+        "code": "+47"
+    },
+    {
+        "abbreviation": "BW",
+        "name": "Botswana",
+        "flag": "bw.png",
+        "code": "+267"
+    },
+    {
+        "abbreviation": "BY",
+        "name": "Belarus",
+        "flag": "by.png",
+        "code": "+375"
+    },
+    {
+        "abbreviation": "BZ",
+        "name": "Belize",
+        "flag": "bz.png",
+        "code": "+501"
+    },
+    {
+        "abbreviation": "CA",
+        "name": "Canada",
+        "flag": "ca.png",
+        "code": "+1"
+    },
+    {
+        "abbreviation": "CC",
+        "name": "Cocos (Keeling) Islands",
+        "flag": "cc.png",
+        "code": "+61"
+    },
+    {
+        "abbreviation": "CD",
+        "name": "Congo",
+        "flag": "cd.png",
+        "code": "+242"
+    },
+    {
+        "abbreviation": "CF",
+        "name": "Central African Republic",
+        "flag": "cf.png",
+        "code": "+236"
+    },
+    {
+        "abbreviation": "CG",
+        "name": "Republic of the Congo",
+        "flag": "cg.png",
+        "code": "+242"
+    },
+    {
+        "abbreviation": "CH",
+        "name": "Switzerland",
+        "flag": "ch.png",
+        "code": "+41"
+    },
+    {
+        "abbreviation": "CI",
+        "name": "Côte d'Ivoire",
+        "flag": "ci.png",
+        "code": "+225"
+    },
+    {
+        "abbreviation": "CK",
+        "name": "Cook Islands",
+        "flag": "ck.png",
+        "code": "+682"
+    },
+    {
+        "abbreviation": "CL",
+        "name": "Chile",
+        "flag": "cl.png",
+        "code": "+56"
+    },
+    {
+        "abbreviation": "CM",
+        "name": "Cameroon",
+        "flag": "cm.png",
+        "code": "+237"
+    },
+    {
+        "abbreviation": "CN",
+        "name": "China",
+        "flag": "cn.png",
+        "code": "+86"
+    },
+    {
+        "abbreviation": "CO",
+        "name": "Colombia",
+        "flag": "co.png",
+        "code": "+57"
+    },
+    {
+        "abbreviation": "CR",
+        "name": "Costa Rica",
+        "flag": "cr.png",
+        "code": "+506"
+    },
+    {
+        "abbreviation": "BF",
+        "name": "Burkina Faso",
+        "flag": "bf.png",
+        "code": "+226"
+    },
+    {
+        "abbreviation": "BG",
+        "name": "Bulgaria",
+        "flag": "bg.png",
+        "code": "+359"
+    },
+    {
+        "abbreviation": "BH",
+        "name": "Bahrain",
+        "flag": "bh.png",
+        "code": "+973"
+    },
+    {
+        "abbreviation": "BI",
+        "name": "Burundi",
+        "flag": "bi.png",
+        "code": "+257"
+    },
+    {
+        "abbreviation": "BJ",
+        "name": "Benin",
+        "flag": "bj.png",
+        "code": "+229"
+    },
+    {
+        "abbreviation": "BL",
+        "name": "Saint Barthélemy",
+        "flag": "bl.png",
+        "code": "+590"
+    },
+    {
+        "abbreviation": "BM",
+        "name": "Bermuda",
+        "flag": "bm.png",
+        "code": "+1-441"
+    },
+    {
+        "abbreviation": "BN",
+        "name": "Brunei Darussalam",
+        "flag": "bn.png",
+        "code": "+673"
+    },
+    {
+        "abbreviation": "BO",
+        "name": "Bolivia",
+        "flag": "bo.png",
+        "code": "+591"
+    },
+    {
+        "abbreviation": "BQ",
+        "name": "Caribbean Netherlands",
+        "flag": "bq.png",
+        "code": "+599"
+    },
+    {
+        "abbreviation": "BR",
+        "name": "Brazil",
+        "flag": "br.png",
+        "code": "+55"
+    },
+    {
+        "abbreviation": "BS",
+        "name": "Bahamas",
+        "flag": "bs.png",
+        "code": "+1-242"
+    },
+    {
+        "abbreviation": "BT",
+        "name": "Bhutan",
+        "flag": "bt.png",
+        "code": "+975"
+    },
+    {
+        "abbreviation": "BW",
+        "name": "Botswana",
+        "flag": "bw.png",
+        "code": "+267"
+    },
+    {
+        "abbreviation": "BY",
+        "name": "Belarus",
+        "flag": "by.png",
+        "code": "+375"
+    },
+    {
+        "abbreviation": "BZ",
+        "name": "Belize",
+        "flag": "bz.png",
+        "code": "+501"
+    },
+    {
+        "abbreviation": "CA",
+        "name": "Canada",
+        "flag": "ca.png",
+        "code": "+1"
+    },
+    {
+        "abbreviation": "CC",
+        "name": "Cocos (Keeling) Islands",
+        "flag": "cc.png",
+        "code": "+61"
+    },
+    {
+        "abbreviation": "CD",
+        "name": "Congo",
+        "flag": "cd.png",
+        "code": "+243"
+    },
+    {
+        "abbreviation": "CF",
+        "name": "Central African Republic",
+        "flag": "cf.png",
+        "code": "+236"
+    },
+    {
+        "abbreviation": "CG",
+        "name": "Republic of the Congo",
+        "flag": "cg.png",
+        "code": "+242"
+    },
+    {
+        "abbreviation": "CH",
+        "name": "Switzerland",
+        "flag": "ch.png",
+        "code": "+41"
+    },
+    {
+        "abbreviation": "CI",
+        "name": "Côte d'Ivoire",
+        "flag": "ci.png",
+        "code": "+225"
+    },
+    {
+        "abbreviation": "CK",
+        "name": "Cook Islands",
+        "flag": "ck.png",
+        "code": "+682"
+    },
+    {
+        "abbreviation": "CL",
+        "name": "Chile",
+        "flag": "cl.png",
+        "code": "+56"
+    },
+    {
+        "abbreviation": "CM",
+        "name": "Cameroon",
+        "flag": "cm.png",
+        "code": "+237"
+    },
+    {
+        "abbreviation": "CN",
+        "name": "China",
+        "flag": "cn.png",
+        "code": "+86"
+    },
+    {
+        "abbreviation": "CO",
+        "name": "Colombia",
+        "flag": "co.png",
+        "code": "+57"
+    },
+    {
+        "abbreviation": "CR",
+        "name": "Costa Rica",
+        "flag": "cr.png",
+        "code": "+506"
+    },
+    {
+        "abbreviation": "CU",
+        "name": "Cuba",
+        "flag": "cu.png",
+        "code": "+53"
+    },
+    {
+        "abbreviation": "MX",
+        "name": "Mexico",
+        "flag": "mx.png",
+        "code": "+52"
+    },
+    {
+        "abbreviation": "MY",
+        "name": "Malaysia",
+        "flag": "my.png",
+        "code": "+60"
+    },
+    {
+        "abbreviation": "MZ",
+        "name": "Mozambique",
+        "flag": "mz.png",
+        "code": "+258"
+    },
+    {
+        "abbreviation": "NA",
+        "name": "Namibia",
+        "flag": "na.png",
+        "code": "+264"
+    },
+    {
+        "abbreviation": "NC",
+        "name": "New Caledonia",
+        "flag": "nc.png",
+        "code": "+687"
+    },
+    {
+        "abbreviation": "NE",
+        "name": "Niger",
+        "flag": "ne.png",
+        "code": "+227"
+    },
+    {
+        "abbreviation": "NF",
+        "name": "Norfolk Island",
+        "flag": "nf.png",
+        "code": "+672"
+    },
+    {
+        "abbreviation": "NG",
+        "name": "Nigeria",
+        "flag": "ng.png",
+        "code": "+234"
+    },
+    {
+        "abbreviation": "NI",
+        "name": "Nicaragua",
+        "flag": "ni.png",
+        "code": "+505"
+    },
+    {
+        "abbreviation": "NL",
+        "name": "Netherlands",
+        "flag": "nl.png",
+        "code": "+31"
+    },
+    {
+        "abbreviation": "NO",
+        "name": "Norway",
+        "flag": "no.png",
+        "code": "+47"
+    },
+    {
+        "abbreviation": "NP",
+        "name": "Nepal",
+        "flag": "np.png",
+        "code": "+977"
+    },
+    {
+        "abbreviation": "NR",
+        "name": "Nauru",
+        "flag": "nr.png",
+        "code": "+674"
+    },
+    {
+        "abbreviation": "NU",
+        "name": "Niue",
+        "flag": "nu.png",
+        "code": "+683"
+    },
+    {
+        "abbreviation": "NZ",
+        "name": "New Zealand",
+        "flag": "nz.png",
+        "code": "+64"
+    },
+    {
+        "abbreviation": "OM",
+        "name": "Oman",
+        "flag": "om.png",
+        "code": "+968"
+    },
+    {
+        "abbreviation": "PA",
+        "name": "Panama",
+        "flag": "pa.png",
+        "code": "+507"
+    },
+    {
+        "abbreviation": "PE",
+        "name": "Peru",
+        "flag": "pe.png",
+        "code": "+51"
+    },
+    {
+        "abbreviation": "PF",
+        "name": "French Polynesia",
+        "flag": "pf.png",
+        "code": "+689"
+    },
+    {
+        "abbreviation": "PG",
+        "name": "Papua New Guinea",
+        "flag": "pg.png",
+        "code": "+675"
+    },
+    {
+        "abbreviation": "PH",
+        "name": "Philippines",
+        "flag": "ph.png",
+        "code": "+63"
+    },
+    {
+        "abbreviation": "PK",
+        "name": "Pakistan",
+        "flag": "pk.png",
+        "code": "+92"
+    },
+    {
+        "abbreviation": "PL",
+        "name": "Poland",
+        "flag": "pl.png",
+        "code": "+48"
+    },
+    {
+        "abbreviation": "PM",
+        "name": "Saint Pierre and Miquelon",
+        "flag": "pm.png",
+        "code": "+508"
+    },
+    {
+        "abbreviation": "PN",
+        "name": "Pitcairn",
+        "flag": "pn.png",
+        "code": "+870"
+    },
+    {
+        "abbreviation": "PR",
+        "name": "Puerto Rico",
+        "flag": "pr.png",
+        "code": "+1-787"
+    },
+    {
+        "abbreviation": "PS",
+        "name": "Palestine",
+        "flag": "ps.png",
+        "code": "+970"
+    },
+    {
+        "abbreviation": "PT",
+        "name": "Portugal",
+        "flag": "pt.png",
+        "code": "+351"
+    },
+    {
+        "abbreviation": "PW",
+        "name": "Palau",
+        "flag": "pw.png",
+        "code": "+680"
+    },
+    {
+        "abbreviation": "PY",
+        "name": "Paraguay",
+        "flag": "py.png",
+        "code": "+595"
+    },
+    {
+        "abbreviation": "QA",
+        "name": "Qatar",
+        "flag": "qa.png",
+        "code": "+974"
+    },
+    {
+        "abbreviation": "RE",
+        "name": "Réunion",
+        "flag": "re.png",
+        "code": "+262"
+    },
+    {
+        "abbreviation": "RO",
+        "name": "Romania",
+        "flag": "ro.png",
+        "code": "+40"
+    },
+    {
+        "abbreviation": "RS",
+        "name": "Serbia",
+        "flag": "rs.png",
+        "code": "+381"
+    },
+    {
+        "abbreviation": "RU",
+        "name": "Russian Federation",
+        "flag": "ru.png",
+        "code": "+7"
+    },
+    {
+        "abbreviation": "RW",
+        "name": "Rwanda",
+        "flag": "rw.png",
+        "code": "+250"
+    },
+    {
+        "abbreviation": "SA",
+        "name": "Saudi Arabia",
+        "flag": "sa.png",
+        "code": "+966"
+    },
+    {
+        "abbreviation": "SB",
+        "name": "Solomon Islands",
+        "flag": "sb.png",
+        "code": "+677"
+    },
+    {
+        "abbreviation": "SC",
+        "name": "Seychelles",
+        "flag": "sc.png",
+        "code": "+248"
+    },
+    {
+        "abbreviation": "SD",
+        "name": "Sudan",
+        "flag": "sd.png",
+        "code": "+249"
+    },
+    {
+        "abbreviation": "SE",
+        "name": "Sweden",
+        "flag": "se.png",
+        "code": "+46"
+    },
+    {
+        "abbreviation": "SG",
+        "name": "Singapore",
+        "flag": "sg.png",
+        "code": "+65"
+    },
+    {
+        "abbreviation": "SH",
+        "name": "Saint Helena",
+        "flag": "sh.png",
+        "code": "+290"
+    },
+    {
+        "abbreviation": "SI",
+        "name": "Slovenia",
+        "flag": "si.png",
+        "code": "+386"
+    },
+    {
+        "abbreviation": "SJ",
+        "name": "Svalbard and Jan Mayen Islands",
+        "flag": "sj.png",
+        "code": "+47"
+    },
+    {
+        "abbreviation": "SK",
+        "name": "Slovakia",
+        "flag": "sk.png",
+        "code": "+421"
+    },
+    {
+        "abbreviation": "SL",
+        "name": "Sierra Leone",
+        "flag": "sl.png",
+        "code": "+232"
+    },
+    {
+        "abbreviation": "SM",
+        "name": "San Marino",
+        "flag": "sm.png",
+        "code": "+378"
+    },
+    {
+        "abbreviation": "SN",
+        "name": "Senegal",
+        "flag": "sn.png",
+        "code": "+221"
+    },
+    {
+        "abbreviation": "SO",
+        "name": "Somalia",
+        "flag": "so.png",
+        "code": "+252"
+    },
+    {
+        "abbreviation": "SR",
+        "name": "Suriname",
+        "flag": "sr.png",
+        "code": "+597"
+    },
+    {
+        "abbreviation": "SS",
+        "name": "South Sudan",
+        "flag": "ss.png",
+        "code": "+211"
+    },
+    {
+        "abbreviation": "ST",
+        "name": "Sao Tome and Principe",
+        "flag": "st.png",
+        "code": "+239"
+    },
+    {
+        "abbreviation": "SV",
+        "name": "El Salvador",
+        "flag": "sv.png",
+        "code": "+503"
+    },
+    {
+        "abbreviation": "SX",
+        "name": "Sint Maarten (Dutch part)",
+        "flag": "sx.png",
+        "code": "+1-721"
+    },
+    {
+        "abbreviation": "SY",
+        "name": "Syrian Arab Republic",
+        "flag": "sy.png",
+        "code": "+963"
+    },
+    {
+        "abbreviation": "SZ",
+        "name": "Swaziland",
+        "flag": "sz.png",
+        "code": "+268"
+    },
+    {
+        "abbreviation": "TC",
+        "name": "Turks and Caicos Islands",
+        "flag": "tc.png",
+        "code": "+1"
+    },
+    {
+        "abbreviation": "TD",
+        "name": "Chad",
+        "flag": "td.png",
+        "code": "+235"
+    },
+    {
+        "abbreviation": "TF",
+        "name": "French Southern Territories",
+        "flag": "tf.png",
+        "code": "+262"
+    },
+    {
+        "abbreviation": "TG",
+        "name": "Togo",
+        "flag": "tg.png",
+        "code": "+228"
+    },
+    {
+        "abbreviation": "TH",
+        "name": "Thailand",
+        "flag": "th.png",
+        "code": "+66"
+    },
+    {
+        "abbreviation": "TJ",
+        "name": "Tajikistan",
+        "flag": "tj.png",
+        "code": "+992"
+    },
+    {
+        "abbreviation": "TK",
+        "name": "Tokelau",
+        "flag": "tk.png",
+        "code": "+690"
+    },
+    {
+        "abbreviation": "TL",
+        "name": "Timor-Leste",
+        "flag": "tl.png",
+        "code": "+670"
+    },
+    {
+        "abbreviation": "TM",
+        "name": "Turkmenistan",
+        "flag": "tm.png",
+        "code": "+993"
+    },
+    {
+        "abbreviation": "TN",
+        "name": "Tunisia",
+        "flag": "tn.png",
+        "code": "+216"
+    },
+    {
+        "abbreviation": "TO",
+        "name": "Tonga",
+        "flag": "to.png",
+        "code": "+676"
+    },
+    {
+        "abbreviation": "TR",
+        "name": "Turkey",
+        "flag": "tr.png",
+        "code": "+90"
+    },
+    {
+        "abbreviation": "TT",
+        "name": "Trinidad and Tobago",
+        "flag": "tt.png",
+        "code": "+1-868"
+    },
+    {
+        "abbreviation": "TV",
+        "name": "Tuvalu",
+        "flag": "tv.png",
+        "code": "+688"
+    },
+    {
+        "abbreviation": "TW",
+        "name": "Taiwan (Republic of China)",
+        "flag": "tw.png",
+        "code": "+886"
+    },
+    {
+        "abbreviation": "TZ",
+        "name": "Tanzania, United Republic of",
+        "flag": "tz.png",
+        "code": "+255"
+    },
+    {
+        "abbreviation": "UA",
+        "name": "Ukraine",
+        "flag": "ua.png",
+        "code": "+380"
+    },
+    {
+        "abbreviation": "UG",
+        "name": "Uganda",
+        "flag": "ug.png",
+        "code": "+256"
+    },
+    {
+        "abbreviation": "UM",
+        "name": "US Minor Outlying Islands",
+        "flag": "um.png",
+        "code": "+1"
+    },
+    {
+        "abbreviation": "US",
+        "name": "United States",
+        "flag": "us.png",
+        "code": "+1"
+    },
+    {
+        "abbreviation": "UY",
+        "name": "Uruguay",
+        "flag": "uy.png",
+        "code": "+598"
+    },
+    {
+        "abbreviation": "UZ",
+        "name": "Uzbekistan",
+        "flag": "uz.png",
+        "code": "+998"
+    },
+    {
+        "abbreviation": "VA",
+        "name": "Holy See (Vatican City State)",
+        "flag": "va.png",
+        "code": "+39"
+    },
+    {
+        "abbreviation": "VC",
+        "name": "Saint Vincent and the Grenadines",
+        "flag": "vc.png",
+        "code": "+1-784"
+    },
+    {
+        "abbreviation": "VE",
+        "name": "Venezuela, Bolivarian Republic of",
+        "flag": "ve.png",
+        "code": "+58"
+    },
+    {
+        "abbreviation": "VG",
+        "name": "Virgin Islands, British",
+        "flag": "vg.png",
+        "code": "+1-284"
+    },
+    {
+        "abbreviation": "VI",
+        "name": "Virgin Islands, U.S.",
+        "flag": "vi.png",
+        "code": "+1-340"
+    },
+    {
+        "abbreviation": "VN",
+        "name": "Vietnam",
+        "flag": "vn.png",
+        "code": "+84"
+    },
+    {
+        "abbreviation": "VU",
+        "name": "Vanuatu",
+        "flag": "vu.png",
+        "code": "+678"
+    },
+    {
+        "abbreviation": "WF",
+        "name": "Wallis and Futuna Islands",
+        "flag": "wf.png",
+        "code": "+681"
+    },
+    {
+        "abbreviation": "WS",
+        "name": "Samoa",
+        "flag": "ws.png",
+        "code": "+685"
+    },
+    {
+        "abbreviation": "XK",
+        "name": "Kosovo",
+        "flag": "xk.png",
+        "code": "+383"
+    },
+    {
+        "abbreviation": "YE",
+        "name": "Yemen",
+        "flag": "ye.png",
+        "code": "+967"
+    },
+    {
+        "abbreviation": "YT",
+        "name": "Mayotte",
+        "flag": "yt.png",
+        "code": "+262"
+    },
+    {
+        "abbreviation": "ZA",
+        "name": "South Africa",
+        "flag": "za.png",
+        "code": "+27"
+    },
+    {
+        "abbreviation": "ZM",
+        "name": "Zambia",
+        "flag": "zm.png",
+        "code": "+260"
+    }
+]
