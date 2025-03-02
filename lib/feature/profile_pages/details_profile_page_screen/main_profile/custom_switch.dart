@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+enum SwitchType { theme, biometric }
+
 class CustomSwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
-
-  CustomSwitch({Key? key, required this.value, required this.onChanged})
-      : super(key: key);
+  final SwitchType switchType;
+  CustomSwitch({
+    Key? key,
+    required this.value,
+    required this.onChanged,
+    required this.switchType,
+  }) : super(key: key);
 
   @override
   _CustomSwitchState createState() => _CustomSwitchState();
@@ -20,13 +26,16 @@ class _CustomSwitchState extends State<CustomSwitch>
   @override
   void initState() {
     super.initState();
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 60));
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 60),
+    );
     _circleAnimation = AlignmentTween(
-            begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
-            end: widget.value ? Alignment.centerLeft : Alignment.centerRight)
-        .animate(CurvedAnimation(
-            parent: _animationController!, curve: Curves.linear));
+      begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
+      end: widget.value ? Alignment.centerLeft : Alignment.centerRight,
+    ).animate(
+      CurvedAnimation(parent: _animationController!, curve: Curves.linear),
+    );
   }
 
   @override
@@ -42,35 +51,49 @@ class _CustomSwitchState extends State<CustomSwitch>
               } else {
                 _animationController!.forward();
               }
-              widget.value == false
-                  ? widget.onChanged(true)
-                  : widget.onChanged(false);
+
+              if (widget.switchType == SwitchType.theme) {
+                // Handle theme switch logic here
+                widget.onChanged(!widget.value);
+              }
+              // else if (widget.switchType == SwitchType.biometric) {
+              //   // Handle biometric switch logic here
+              //   widget.onChanged(!widget.value);
+              // }
             },
             child: Container(
               width: 48.0.w,
               height: 25.0.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100.0.w),
-                color: _circleAnimation!.value == Alignment.centerLeft
-                    ? Theme.of(context).colorScheme.onSurface
-                    : Theme.of(context).colorScheme.primary,
+                color:
+                    _circleAnimation!.value == Alignment.centerLeft
+                        ? Theme.of(context).colorScheme.onSurface
+                        : Theme.of(context).colorScheme.primary,
               ),
               child: Padding(
                 padding: EdgeInsetsDirectional.only(
-                    top: 4.0.w, bottom: 4.0.w, start: 4.0.w, end: 4.0.w),
+                  top: 4.0.w,
+                  bottom: 4.0.w,
+                  start: 4.0.w,
+                  end: 4.0.w,
+                ),
                 child: Container(
-                  alignment: widget.value
-                      ? ((Directionality.of(context) == TextDirection.rtl)
-                          ? Alignment.centerLeft
-                          : Alignment.centerRight)
-                      : ((Directionality.of(context) == TextDirection.rtl)
-                          ? Alignment.centerRight
-                          : Alignment.centerLeft),
+                  alignment:
+                      widget.value
+                          ? ((Directionality.of(context) == TextDirection.rtl)
+                              ? Alignment.centerLeft
+                              : Alignment.centerRight)
+                          : ((Directionality.of(context) == TextDirection.rtl)
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft),
                   child: Container(
                     width: 20.0,
                     height: 20.0,
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.white),
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).colorScheme.onSecondaryContainer,
+                    ),
                   ),
                 ),
               ),

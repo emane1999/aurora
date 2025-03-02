@@ -25,15 +25,19 @@ class Training extends StatelessWidget {
               "Udemy:",
               style: Theme.of(
                 context,
-              ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w500),
+              ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w600),
             ),
             Text(
               " (Course URL)",
               style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                fontWeight: FontWeight.w300,
+                fontWeight: FontWeight.w400,
                 decoration: TextDecoration.underline,
                 decorationColor: Theme.of(context).colorScheme.secondary,
-                color: Theme.of(context).colorScheme.secondary,
+                color:
+                    Theme.of(context).brightness == Brightness.dark
+                        ? Theme.of(context).colorScheme.primary
+                        // Dark mode background color
+                        : Theme.of(context).colorScheme.secondary,
               ),
             ),
           ],
@@ -48,13 +52,23 @@ class Training extends StatelessWidget {
           "Performance:",
           style: Theme.of(
             context,
-          ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w500),
+          ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w600),
         ),
         LinearPercentIndicator(
           width: 286.w,
           lineHeight: 34.0,
           percent: 0.67,
-          center: Text("67.0%", style: Theme.of(context).textTheme.labelLarge),
+          center: Text(
+            "67.0%",
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
+              color:
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Theme.of(context).colorScheme.tertiary
+                      // Dark mode background color
+                      : Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
           backgroundColor: Theme.of(context).colorScheme.onSurface,
           progressColor: TURQUOISE_200,
           barRadius: Radius.circular(4),

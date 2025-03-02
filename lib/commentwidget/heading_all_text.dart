@@ -24,7 +24,7 @@ class HeadingAllText extends StatelessWidget {
     ];
 
     String item = getItemFromIndex(itemList, indexToSearch);
-    return Text(item, style: Theme.of(context).textTheme.displaySmall);
+    return Text(item, style: Theme.of(context).textTheme.displayLarge);
   }
 }
 

@@ -10,16 +10,17 @@ class BTextfieldReade extends StatelessWidget {
   final bool? readOnly;
   final Function(String)? onChanged;
   final TextInputType inputType;
-  const BTextfieldReade(
-      {super.key,
-      this.controller,
-      this.hintText,
-      this.suffixIcon,
-      this.lable,
-      this.onChanged,
-      required this.inputType,
-      this.focusNode,
-      required this.readOnly});
+  const BTextfieldReade({
+    super.key,
+    this.controller,
+    this.hintText,
+    this.suffixIcon,
+    this.lable,
+    this.onChanged,
+    required this.inputType,
+    this.focusNode,
+    required this.readOnly,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,33 +30,41 @@ class BTextfieldReade extends StatelessWidget {
       children: [
         Text(
           lable ?? "",
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontFamily: 'AllRoundGothic',
+            fontWeight: FontWeight.w600,
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
         ),
         8.verticalSpace,
         TextFormField(
           readOnly: readOnly!,
           style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: Theme.of(context).colorScheme.onTertiary,
-              ),
+            color: Theme.of(context).colorScheme.onTertiary,
+          ),
           controller: controller,
           focusNode: focusNode,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           textInputAction: TextInputAction.next,
           decoration: InputDecoration(
+            filled: true, // Enable background color
+            fillColor: Theme.of(context).colorScheme.onSurface,
             hintText: hintText,
             suffixIcon: suffixIcon,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(4.0)),
-              borderSide: readOnly!
-                  ? BorderSide(
-                      color: Theme.of(context).colorScheme.onSurfaceVariant)
-                  : BorderSide(color: Colors.transparent),
+              borderSide:
+                  readOnly!
+                      ? BorderSide(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant,
+                      )
+                      : BorderSide(color: Colors.transparent),
             ),
           ),
           autocorrect: false,
           keyboardType: inputType,
           onChanged: onChanged,
-        )
+        ),
       ],
     );
   }

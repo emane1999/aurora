@@ -19,17 +19,18 @@ class UpcomingEventCrad extends StatelessWidget {
         ListTile(
           title: Row(
             children: [
-              SvgPicture.asset(
-                'assets/images/Icons (1).svg',
-                width: 24.w,
-                height: 24.w,
+              Icon(
+                Icons.mail_outline,
+                color: Theme.of(context).colorScheme.primary,
               ),
               10.horizontalSpace,
               Text(
                 S.of(context).latestAnnouncement,
-                style: Theme.of(
-                  context,
-                ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  fontSize: 16.sp,
+                  fontFamily: 'Sora',
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ],
           ),
@@ -54,6 +55,8 @@ class UpcomingEventCrad extends StatelessWidget {
                           ).textTheme.labelSmall?.copyWith(
                             color: Theme.of(context).colorScheme.onSecondary,
                             fontSize: 16.sp,
+                            fontFamily: 'Sora',
+                            fontWeight: FontWeight.w300,
                           ),
                         ),
                       ),
@@ -64,7 +67,13 @@ class UpcomingEventCrad extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: [BSecButton(text: S.of(context).viewMore)],
+          children: [
+            BSecButton(
+              text: S.of(context).viewMore,
+              enabled: true,
+              onPressed: () {},
+            ),
+          ],
         ),
       ],
     );

@@ -74,7 +74,8 @@ class _LoginState extends ConsumerState<Login> {
                     child: Text(
                       S.of(context).forgotPassword,
                       style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: Theme.of(context).colorScheme.onPrimary,
+                        color: Theme.of(context).colorScheme.onSecondary,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),
@@ -117,7 +118,7 @@ class _LoginState extends ConsumerState<Login> {
                             fontSize: 14.sp,
                             color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
-                            fontFamily: 'Alexandria',
+                            fontFamily: 'Sora',
                             decoration: TextDecoration.underline,
                           ),
                         ),

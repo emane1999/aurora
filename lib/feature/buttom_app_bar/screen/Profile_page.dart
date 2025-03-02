@@ -1,6 +1,8 @@
 import 'package:aurora/commentwidget/heading_all_text.dart';
 import 'package:aurora/commentwidget/person_des.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/main_profile/card_all_componet.dart';
+import 'package:aurora/feature/profile_pages/details_profile_page_screen/main_profile/card_swich_componet.dart';
+import 'package:aurora/feature/profile_pages/details_profile_page_screen/main_profile/custom_switch.dart';
 import 'package:aurora/router/router_utils.dart';
 import 'package:aurora/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/preson.svg',
                   title: "Personal Info",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.personal_Info.toName);
                   },
@@ -57,7 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/organization.svg',
                   title: "Organizational Info",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.organizational_info_user.toName);
                   },
@@ -66,7 +68,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/vectors.svg',
                   title: "Finance & Salary",
-                  isComplet: true,
                   onPressed: () {
                     context.pushNamed(AppRoute.FinanceSalary.toName);
                   },
@@ -75,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/contract.svg',
                   title: "Contract",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.contract.toName);
                   },
@@ -84,7 +85,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/annualIcon.svg',
                   title: "Leaves & Vacations",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.Leaves_Vacations.toName);
                   },
@@ -93,7 +94,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/documents.svg',
                   title: "Documents",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.Documents.toName);
                   },
@@ -102,7 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/courses.svg',
                   title: "Courses & Training",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.CoursesTraining.toName);
                   },
@@ -111,7 +112,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/assets.svg',
                   title: "Assets",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.Assets.toName);
                   },
@@ -122,7 +123,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/notifications.svg',
                   title: "Notifications",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.notifications.toName);
                   },
@@ -131,7 +132,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/Icon.svg',
                   title: "Language",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.language.toName);
                   },
@@ -140,24 +141,26 @@ class _ProfilePageState extends State<ProfilePage> {
                 CardAllComponet(
                   image: 'assets/images/customizations.svg',
                   title: "Customizations",
-                  isComplet: true,
+
                   onPressed: () {
                     context.pushNamed(AppRoute.CustomizationsAdmin.toName);
                   },
                 ),
                 24.verticalSpace,
-                CardAllComponet(
+                CardSwichComponet(
                   image: 'assets/images/Fingerprint (1).svg',
                   title: "Biometric Login",
-                  isComplet: false,
+
                   onPressed: () {},
+                  switchType: SwitchType.biometric,
                 ),
                 24.verticalSpace,
-                CardAllComponet(
+                CardSwichComponet(
                   image: 'assets/images/theme.svg',
                   title: "Light Theme",
-                  isComplet: false,
+
                   onPressed: () {},
+                  switchType: SwitchType.theme,
                 ),
                 24.verticalSpace,
                 SizedBox(
@@ -178,14 +181,28 @@ class _ProfilePageState extends State<ProfilePage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           spacing: 8,
                           children: [
-                            SvgPicture.asset('assets/images/logout.svg'),
+                            SvgPicture.asset(
+                              'assets/images/logout.svg',
+                              colorFilter: ColorFilter.mode(
+                                Theme.of(context).brightness == Brightness.dark
+                                    ? Theme.of(context).colorScheme.onError
+                                    // Dark mode background color
+                                    : Theme.of(context).colorScheme.onError,
+                                BlendMode.srcIn, // Color the SVG
+                              ),
+                            ),
                             Text(
                               "Logout",
                               style: Theme.of(
                                 context,
                               ).textTheme.labelLarge?.copyWith(
                                 fontWeight: FontWeight.w300,
-                                color: Theme.of(context).colorScheme.onError,
+                                color:
+                                    Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Theme.of(context).colorScheme.onError
+                                        // Dark mode background color
+                                        : Theme.of(context).colorScheme.error,
                               ),
                             ),
                           ],

@@ -1,4 +1,5 @@
 import 'package:aurora/commentwidget/b_button.dart';
+import 'package:aurora/commentwidget/b_sec_button.dart';
 import 'package:aurora/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,9 +45,7 @@ class TimeCard extends StatelessWidget {
               children: [
                 Text(
                   getCurrentTime(),
-                  style: Theme.of(
-                    context,
-                  ).textTheme?.displaySmall?.copyWith(fontSize: 32.sp),
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 Row(
                   children: [
@@ -84,10 +83,10 @@ class TimeCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Center(
-                      child: BButton(
-                        S.of(context).clockIn,
+                      child: BSecButton(
                         enabled: true,
                         onPressed: () {},
+                        text: S.of(context).clockIn,
                       ),
                     ),
                     12.horizontalSpace,

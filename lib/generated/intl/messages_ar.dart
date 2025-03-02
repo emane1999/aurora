@@ -24,9 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "announcementsUpcomingEvents": MessageLookupByLibrary.simpleMessage(
-      "الإعلانات / الأحداث القادمة",
-    ),
+    "announcements": MessageLookupByLibrary.simpleMessage("الإعلانات"),
     "annualBalance": MessageLookupByLibrary.simpleMessage("الرصيد السنوي"),
     "attendance": MessageLookupByLibrary.simpleMessage("الحضور"),
     "attendanceHistory": MessageLookupByLibrary.simpleMessage("سجل الحضور"),
@@ -130,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "todaysShift": MessageLookupByLibrary.simpleMessage("نوبة اليوم:"),
     "training": MessageLookupByLibrary.simpleMessage("التدريب"),
     "ttperformance": MessageLookupByLibrary.simpleMessage("\t\tالأداء:  "),
+    "upcomingEvents": MessageLookupByLibrary.simpleMessage("الأحداث القادمة"),
     "usernameOrEmail": MessageLookupByLibrary.simpleMessage(
       "اسم المستخدم أو البريد الإلكتروني",
     ),

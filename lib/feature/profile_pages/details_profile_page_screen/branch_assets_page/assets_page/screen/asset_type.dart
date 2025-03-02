@@ -20,7 +20,13 @@ class _AssetTypeState extends ConsumerState<AssetType> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Asset Type", style: Theme.of(context).textTheme.labelSmall),
+        Text(
+          "Asset Type",
+          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+            fontWeight: FontWeight.w600,
+            fontFamily: 'AllRoundGothic',
+          ),
+        ),
         8.verticalSpace,
         Center(
           child: DropdownButtonHideUnderline(

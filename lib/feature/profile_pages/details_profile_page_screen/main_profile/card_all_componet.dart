@@ -1,20 +1,22 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/main_profile/custom_switch.dart';
+import 'package:aurora/theme/global_theme_providers.dart';
 import 'package:bond_form/bond_form.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CardAllComponet extends StatefulWidget {
   final String image;
   final String title;
-  final bool isComplet;
+
   final Function()? onPressed;
+
   const CardAllComponet({
     super.key,
     required this.image,
     required this.title,
-    required this.isComplet,
+
     required this.onPressed,
   });
 
@@ -23,7 +25,6 @@ class CardAllComponet extends StatefulWidget {
 }
 
 class _CardAllComponetState extends State<CardAllComponet> {
-  bool _enable = false;
   @override
   Widget build(BuildContext context) {
     return Card.filled(
@@ -43,7 +44,15 @@ class _CardAllComponetState extends State<CardAllComponet> {
             crossAxisAlignment: CrossAxisAlignment.center,
             spacing: 8,
             children: [
-              SvgPicture.asset(widget.image),
+              SvgPicture.asset(
+                widget.image,
+                width: 24,
+                height: 24,
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.primary,
+                  BlendMode.srcIn, // Color the SVG
+                ),
+              ),
               Text(
                 widget.title,
                 style: Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -55,17 +64,7 @@ class _CardAllComponetState extends State<CardAllComponet> {
               IconButton(
                 padding: EdgeInsetsDirectional.zero,
                 onPressed: widget.onPressed,
-                icon:
-                    widget.isComplet
-                        ? Icon(Icons.arrow_forward_ios) ?? SizedBox()
-                        : CustomSwitch(
-                          value: _enable,
-                          onChanged: (bool val) {
-                            setState(() {
-                              _enable = val;
-                            });
-                          },
-                        ),
+                icon: Icon(Icons.arrow_forward_ios),
                 color: Theme.of(context).colorScheme.primary,
               ),
             ],

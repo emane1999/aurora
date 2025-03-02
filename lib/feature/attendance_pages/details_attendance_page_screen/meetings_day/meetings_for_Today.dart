@@ -22,11 +22,7 @@ class MeetingsForToday extends StatelessWidget {
         Row(
           spacing: 8.w,
           children: [
-            SvgPicture.asset(
-              'assets/images/today.svg',
-              width: 24.w,
-              height: 24.w,
-            ),
+            Icon(Icons.today, color: Theme.of(context).colorScheme.primary),
             Text(
               "Technical Lead",
               style: Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -39,11 +35,7 @@ class MeetingsForToday extends StatelessWidget {
         Row(
           spacing: 8.w,
           children: [
-            SvgPicture.asset(
-              'assets/images/Group.svg',
-              width: 24.w,
-              height: 24.w,
-            ),
+            Icon(Icons.place, color: Theme.of(context).colorScheme.primary),
             Text(
               "Online - Microsoft Teams",
               style: Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -60,6 +52,7 @@ class MeetingsForToday extends StatelessWidget {
                 context.pushNamed(AppRoute.meeting_details.toName);
               },
               text: S.of(context).viewMore,
+              enabled: true,
             ),
           ],
         ),

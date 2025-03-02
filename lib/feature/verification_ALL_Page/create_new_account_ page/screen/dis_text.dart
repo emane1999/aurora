@@ -15,24 +15,28 @@ class DisText extends StatelessWidget {
         Text(
           text,
           style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
         ),
         8.verticalSpace,
         TextFormField(
-            enabled: false,
-            style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurfaceVariant,
-                ),
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            textInputAction: TextInputAction.next,
-            decoration: InputDecoration(
-              hintText: hintText,
-              suffixIcon: Icon(
-                Icons.admin_panel_settings,
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
-            )),
+          enabled: true,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            color: Theme.of(context).colorScheme.onSurfaceVariant,
+          ),
+
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          textInputAction: TextInputAction.next,
+          decoration: InputDecoration(
+            filled: true, // Enable background color
+            fillColor: Theme.of(context).colorScheme.onSurface,
+            hintText: hintText,
+            suffixIcon: Icon(
+              Icons.lock,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ),
       ],
     );
   }

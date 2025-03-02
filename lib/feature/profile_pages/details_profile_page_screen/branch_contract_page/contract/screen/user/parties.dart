@@ -22,16 +22,15 @@ class PartiesWidget extends StatelessWidget {
             Column(
               spacing: 8,
               children: [
-                SvgPicture.asset(
-                  'assets/images/person.svg',
-                  width: 24.w,
-                  height: 24.w,
+                Icon(
+                  Icons.perm_identity,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 Text(
                   "Employee",
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
                 Text(
@@ -54,6 +53,10 @@ class PartiesWidget extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   'assets/images/Building.svg',
+                  colorFilter: ColorFilter.mode(
+                    Theme.of(context).colorScheme.primary,
+                    BlendMode.srcIn, // Color the SVG
+                  ),
                   width: 24.w,
                   height: 24.w,
                 ),

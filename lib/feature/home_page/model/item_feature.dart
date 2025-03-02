@@ -1,5 +1,14 @@
+import 'package:flutter/material.dart';
+
 class ItemFeature {
   String nameFeature;
-  String imagefeature;
-  ItemFeature({required this.nameFeature, required this.imagefeature});
+  Icon? Iconsfeature;
+  String? imagefeature;
+  bool isCheckType;
+  ItemFeature({
+    required this.nameFeature,
+    required this.isCheckType,
+    this.Iconsfeature,
+    this.imagefeature,
+  });
 }

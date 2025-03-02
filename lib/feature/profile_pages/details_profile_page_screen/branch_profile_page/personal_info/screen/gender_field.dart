@@ -27,18 +27,19 @@ class _GenderFieldState extends State<GenderField> {
       children: [
         Text(
           "Gender",
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontFamily: 'AllRoundGothic',
+            fontWeight: FontWeight.w600,
+          ),
         ),
         8.verticalSpace,
         Center(
           child: DropdownButtonHideUnderline(
             child: DropdownButton2<Gender>(
               iconStyleData: IconStyleData(
-                icon: Icon(
-                  Icons.arrow_drop_down,
-                ),
+                icon: Icon(Icons.arrow_drop_down),
                 iconSize: 24,
-                iconEnabledColor: Theme.of(context).colorScheme.onTertiary,
+                iconEnabledColor: Theme.of(context).colorScheme.onSecondary,
               ),
               isExpanded: true,
               hint: Padding(
@@ -48,21 +49,23 @@ class _GenderFieldState extends State<GenderField> {
                   style: Theme.of(context).inputDecorationTheme.hintStyle,
                 ),
               ),
-              items: Gender.values
-                  .map((Gender gender) => DropdownMenuItem<Gender>(
-                        value: gender,
-                        child: Text(
-                          gender.toString().split('.').last,
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelMedium
-                              ?.copyWith(
-                                color: Theme.of(context).colorScheme.primary,
-                                fontWeight: FontWeight.w400,
-                              ),
+              items:
+                  Gender.values
+                      .map(
+                        (Gender gender) => DropdownMenuItem<Gender>(
+                          value: gender,
+                          child: Text(
+                            gender.toString().split('.').last,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.labelMedium?.copyWith(
+                              color: Theme.of(context).colorScheme.onSecondary,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                         ),
-                      ))
-                  .toList(),
+                      )
+                      .toList(),
               value: selectedGender,
               onChanged: (Gender? value) {
                 setState(() {
@@ -80,20 +83,17 @@ class _GenderFieldState extends State<GenderField> {
                 padding: EdgeInsetsDirectional.all(4),
                 width: 1.sw,
                 decoration: BoxDecoration(
-                  border: selectedGender != null
-                      ? Border.all(
-                          color: Theme.of(context).colorScheme.tertiary,
-                        )
-                      : Border.all(
-                          color: Colors.transparent,
-                        ),
+                  border:
+                      selectedGender != null
+                          ? Border.all(
+                            color: Theme.of(context).colorScheme.primary,
+                          )
+                          : Border.all(color: Colors.transparent),
                   borderRadius: BorderRadius.circular(4),
                   color: Theme.of(context).colorScheme.surfaceContainerHigh,
                 ),
               ),
-              menuItemStyleData: MenuItemStyleData(
-                height: .05.sh,
-              ),
+              menuItemStyleData: MenuItemStyleData(height: .05.sh),
             ),
           ),
         ),

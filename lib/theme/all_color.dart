@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+// Techno White
+const Color TechnoWhite = Color(0xFFEAEAEA);
 // Gray
 const Color GRAY_50 = Color(0xFFFFFFFF);
 const Color GRAY_100 = Color(0xFFFCFCFC);
@@ -18,10 +20,10 @@ const Color GRAY_650 = Color(0xFF292929);
 const Color GRAY_700 = Color(0xFF242424);
 const Color GRAY_750 = Color(0xFF202020);
 const Color GRAY_800 = Color(0xFF171717);
-const Color GRAY_900 = Color(0xFF000000);
+const Color GRAY_900 = Color(0xFF081428);
 // Navy
-const Color NAVY_50 = Color(0xFFCED8E2);
-const Color NAVY_100 = Color(0xFF9EB1C5);
+const Color NAVY_50 = Color(0xFF081428);
+const Color NAVY_100 = Color(0xFF1C3F7B);
 const Color NAVY_150 = Color(0xFF6D8BA8);
 const Color NAVY_200 = Color(0xFF3D648B);
 const Color NAVY_250 = Color(0xFF406EAC);
@@ -32,7 +34,7 @@ const Color OCEAN_BLUE_100 = Color(0xFF99D0E1);
 const Color OCEAN_BLUE_150 = Color(0xFF71A6EE);
 const Color OCEAN_BLUE_200 = Color(0xFF66B8D1);
 const Color OCEAN_BLUE_250 = Color(0xFF33A1C2);
-const Color OCEAN_BLUE_20 = Color(0xff4d33a1c2);
+const Color OCEAN_BLUE_20 = Color(0xff4D1C3F7B);
 const Color OCEAN_BLUE_300 = Color(0xFF0089B3);
 // Sky Blue
 const Color SKY_BLUE_50 = Color(0xFFCCF2F7);
@@ -57,4 +59,17 @@ const Color ORANGE_300 = Color(0xFFF1762D);
 const Color SHADOW = Color(0x40000000);
 const Color SHADOWs = Color(0x26333333);
 //circlecolor
-const Color CIRCLECOLOR = Color.fromARGB(71, 159, 204, 203);
+const Color CIRCLECOLOR = Color.fromARGB(25, 40, 231, 197);
+const Color CIRCLECOLORs = Color.fromARGB(25, 105, 66, 226);
+//purpue
+const Color Purple = Color(0xFF6942E2);
+//cyan/50
+const Color cyan_50 = Color(0xFF28E7C5);
+
+//Linear Gradient color
+const Color lin_1 = Color(0xFF42DEDF);
+const Color lin_2 = Color(0xFF45D7E0);
+const Color lin_3 = Color(0xFF4FC4E5);
+const Color lin_4 = Color(0xFF60A5EE);
+const Color lin_5 = Color(0xFF777BF9);
+const Color lin_6 = Color(0xFF787AFA);

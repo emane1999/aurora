@@ -1,5 +1,4 @@
 import 'package:aurora/commentwidget/header_of_each_branch.dart';
-import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_finance%20_salary_page/finance_salary/screen/deductions_per_month.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_finance%20_salary_page/finance_salary/screen/payslip.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_finance%20_salary_page/finance_salary/screen/salary.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +16,10 @@ class _FinanceSalaryState extends State<FinanceSalary> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.1.sh),
+        preferredSize: Size.fromHeight(.07.sh),
         child: HeaderOfEachBranch(
           title: 'Finance & Salary',
-          preferredSize: Size.fromHeight(.1.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: ListView(
@@ -31,13 +30,7 @@ class _FinanceSalaryState extends State<FinanceSalary> {
           bottom: 24.w,
         ),
         shrinkWrap: true,
-        children: [
-          Salary(),
-          24.verticalSpace,
-          Payslip(),
-          24.verticalSpace,
-          DeductionsPerMonth(),
-        ],
+        children: [Salary(), 24.verticalSpace, Payslip()],
       ),
     );
   }

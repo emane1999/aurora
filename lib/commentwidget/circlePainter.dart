@@ -13,7 +13,7 @@ class CirclePainter extends CustomPainter {
     canvas.rotate(48 * 3.14159 / 180);
     Paint paint2 =
         Paint()
-          ..color = CIRCLECOLOR
+          ..color = CIRCLECOLORs
           ..style = PaintingStyle.fill;
 
     canvas.drawCircle(

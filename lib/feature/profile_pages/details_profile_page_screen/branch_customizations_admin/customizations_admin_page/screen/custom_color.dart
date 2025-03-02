@@ -11,29 +11,34 @@ class CustomColor extends StatelessWidget {
       children: [
         Text(
           "Custom Color:",
-          style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                fontWeight: FontWeight.w400,
-              ),
+          style: Theme.of(
+            context,
+          ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w400),
         ),
         OutlinedButton(
           style: Theme.of(context).outlinedButtonTheme.style?.copyWith(
-                shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(10.0), // Set the border radius
-                  ),
-                ),
-                foregroundColor: WidgetStateProperty.all<Color>(
-                    Theme.of(context)
-                        .colorScheme
-                        .primary), // Foreground color for text
-                backgroundColor: WidgetStateProperty.all<Color>(
-                    Colors.white), // Background color
-                side: WidgetStateProperty.all<BorderSide>(BorderSide(
-                    color: Theme.of(context)
-                        .colorScheme
-                        .tertiary)), // Border color
+            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(
+                  10.0,
+                ), // Set the border radius
               ),
+            ),
+            foregroundColor: WidgetStateProperty.all<Color>(
+              Theme.of(context).colorScheme.primary,
+            ), // Foreground color for text
+            backgroundColor: WidgetStateProperty.all<Color>(
+              Theme.of(context).colorScheme.onSecondaryContainer,
+            ), // Background color
+            side: WidgetStateProperty.all<BorderSide>(
+              BorderSide(
+                color:
+                    Theme.of(context).brightness == Brightness.dark
+                        ? Theme.of(context).colorScheme.onSecondary
+                        : Theme.of(context).colorScheme.tertiary,
+              ),
+            ), // Border color
+          ),
           onPressed: () {},
           child: FittedBox(
             fit: BoxFit.scaleDown,
@@ -41,18 +46,19 @@ class CustomColor extends StatelessWidget {
               softWrap: true,
               overflow: TextOverflow.ellipsis,
               "#9A3BD6",
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    fontWeight: FontWeight.w500,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w500),
             ),
           ),
         ),
         Card(
           shape: CircleBorder(
-              side: BorderSide(
-            color: Theme.of(context).colorScheme.primary,
-            width: 2,
-          )),
+            side: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+              width: 2,
+            ),
+          ),
           elevation: 5,
           child: Container(
             width: 43.w,
@@ -73,7 +79,7 @@ class CustomColor extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

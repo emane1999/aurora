@@ -160,7 +160,7 @@ class _CountryDropdownState extends ConsumerState<CountryDropdown> {
               _showCountryDialog(context, countries);
             },
             child: Icon(
-              Icons.arrow_drop_down,
+              Icons.expand_more,
               color: Theme.of(context).colorScheme.primary,
             ),
           ),

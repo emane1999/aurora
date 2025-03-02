@@ -9,6 +9,10 @@ class BankAccounts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ColorFilter? colorFilter = ColorFilter.mode(
+      Theme.of(context).colorScheme.primary,
+      BlendMode.srcIn, // Color the SVG
+    );
     return CardCom(
       children: [
         Text("Bank Accounts", style: Theme.of(context).textTheme.displaySmall),
@@ -24,10 +28,9 @@ class BankAccounts extends StatelessWidget {
           spacing: 8,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              'assets/images/person.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.perm_identity,
+              color: Theme.of(context).colorScheme.primary,
             ),
             Center(
               child: Text(
@@ -62,6 +65,7 @@ class BankAccounts extends StatelessWidget {
           children: [
             SvgPicture.asset(
               'assets/images/Building.svg',
+              colorFilter: colorFilter,
               width: 24.w,
               height: 24.w,
             ),

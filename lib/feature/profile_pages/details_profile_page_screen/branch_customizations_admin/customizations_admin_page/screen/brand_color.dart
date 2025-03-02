@@ -9,24 +9,38 @@ class BrandColor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Colorlist> CustomizationsColor = [
+    List<Colorlist> CustomizationsColorLight = [
       Colorlist(color: TEXT_PRIMARY.light, title: "Primary Text"),
       Colorlist(color: TEXT_SECONDARY.light, title: "Secondary Text"),
-      Colorlist(color: TEXT_TERTIARY.light, title: "Tertiary Text"),
       Colorlist(color: TEXT_ERROR.light, title: "Error Text"),
       Colorlist(color: TEXT_DISABLED.light, title: "Disabled Text"),
-      Colorlist(color: SKY_BLUE_250, title: "Primary Button"),
-      Colorlist(color: NAVY_300, title: "Secondary Button"),
-      Colorlist(color: TURQUOISE_200, title: "UI Elements"),
+      Colorlist(color: NAVY_100, title: "Primary Button"),
+      Colorlist(color: TechnoWhite, title: "Secondary Button"),
+      Colorlist(color: cyan_50, title: "UI Elements"),
       Colorlist(color: SURFACE_PRIMARY.light, title: "Primary Surface"),
       Colorlist(color: SURFACE_SELECTED.light, title: "Selected Surface"),
     ];
+    List<Colorlist> CustomizationsColorDark = [
+      Colorlist(color: TEXT_PRIMARY.dark, title: "Primary Text"),
+      Colorlist(color: TechnoWhite, title: "Secondary Text"),
+      Colorlist(color: TEXT_ERROR.dark, title: "Error Text"),
+      Colorlist(color: TEXT_DISABLED.dark, title: "Disabled Text"),
+      Colorlist(color: NAVY_100, title: "Primary Button"),
+      Colorlist(color: SURFACE_PRIMARY.dark, title: "Secondary Button"),
+      Colorlist(color: cyan_50, title: "UI Elements"),
+      Colorlist(color: SURFACE_PRIMARY.dark, title: "Primary Surface"),
+      Colorlist(color: SURFACE_SELECTED.dark, title: "Selected Surface"),
+    ];
+    List<Colorlist> colorList =
+        Theme.of(context).brightness == Brightness.dark
+            ? CustomizationsColorDark
+            : CustomizationsColorLight;
     return Wrap(
       spacing: 12,
       runSpacing: 24,
       alignment: WrapAlignment.center,
       children: [
-        for (int i = 0; i < CustomizationsColor.length; i++)
+        for (int i = 0; i < colorList.length; i++)
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,7 +52,7 @@ class BrandColor extends StatelessWidget {
                   width: 43.w,
                   height: 43.w,
                   decoration: BoxDecoration(
-                    color: CustomizationsColor[i].color,
+                    color: colorList[i].color,
                     shape: BoxShape.circle,
                   ),
                   child: SizedBox(),
@@ -46,7 +60,7 @@ class BrandColor extends StatelessWidget {
               ),
               4.verticalSpace, // Adds space between circle and text
               Text(
-                CustomizationsColor[i].title,
+                colorList[i].title,
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w400,

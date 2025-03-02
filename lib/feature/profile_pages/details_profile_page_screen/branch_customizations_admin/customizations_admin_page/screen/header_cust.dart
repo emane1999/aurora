@@ -20,9 +20,9 @@ class HeaderCust extends StatelessWidget {
       children: [
         Text(
           maintitile,
-          style: Theme.of(context).textTheme.displaySmall?.copyWith(
+          style: Theme.of(context).textTheme.displayMedium?.copyWith(
             fontSize: 20.sp,
-            fontWeight: FontWeight.w500,
+            fontFamily: 'Nunito',
           ),
         ),
         12.verticalSpace,
@@ -32,7 +32,7 @@ class HeaderCust extends StatelessWidget {
           subtitle,
           style: Theme.of(
             context,
-          ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w400),
+          ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w600),
         ),
         4.verticalSpace,
         Text(

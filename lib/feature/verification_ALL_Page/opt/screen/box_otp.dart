@@ -25,7 +25,11 @@ class _BoxOtpState extends ConsumerState<BoxOtp> {
               child: PinCodeTextField(
                 appContext: context,
                 textStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onTertiary,
+                  color:
+                      Theme.of(context).brightness == Brightness.dark
+                          ? Theme.of(context).colorScheme.primary
+                          // Dark mode background color
+                          : Theme.of(context).colorScheme.onTertiary,
                   fontSize: 24.sp,
                 ),
                 hintCharacter: "4",
@@ -45,8 +49,8 @@ class _BoxOtpState extends ConsumerState<BoxOtp> {
                       BondFormStateStatus.failed == formState.status &&
                               BondFormStateStatus.submitted != formState.status
                           ? Theme.of(context).colorScheme.error
-                          : Theme.of(context).colorScheme.onTertiary,
-                  selectedColor: Theme.of(context).colorScheme.onTertiary,
+                          : Theme.of(context).colorScheme.primary,
+                  selectedColor: Theme.of(context).colorScheme.primary,
                   selectedFillColor:
                       Theme.of(context).colorScheme.surfaceContainerHigh,
                   inactiveFillColor:
@@ -55,6 +59,7 @@ class _BoxOtpState extends ConsumerState<BoxOtp> {
                 onChanged: (value) {
                   ref.read(otpCodeProvider.notifier).updateText('otp', value);
                 },
+
                 backgroundColor: Colors.transparent,
                 cursorColor: Theme.of(context).colorScheme.onTertiary,
                 animationDuration: const Duration(milliseconds: 300),

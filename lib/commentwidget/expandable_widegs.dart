@@ -17,7 +17,11 @@ class ExpandableWidegs extends StatelessWidget {
       header: Row(
         spacing: 8,
         children: [
-          SvgPicture.asset('assets/images/note.svg', width: 24.w, height: 24.w),
+          Icon(
+            Icons.comment_outlined,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+
           Text(
             "Notes:",
             style: Theme.of(

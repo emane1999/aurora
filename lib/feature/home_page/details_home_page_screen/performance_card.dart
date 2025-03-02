@@ -20,9 +20,11 @@ class PerformanceCard extends StatelessWidget {
         ListTile(
           title: Text(
             S.of(context).goals,
-            style: Theme.of(
-              context,
-            ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+              fontSize: 16.sp,
+
+              fontWeight: FontWeight.w600,
+            ),
           ),
           subtitle: Column(
             children:
@@ -55,9 +57,10 @@ class PerformanceCard extends StatelessWidget {
         ),
         Text(
           S.of(context).ttperformance,
-          style: Theme.of(
-            context,
-          ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         Row(
           spacing: 32.0.w,
@@ -70,9 +73,10 @@ class PerformanceCard extends StatelessWidget {
                   percent: 0.38, // Percentage (0.75 means 75%)
                   center: Text(
                     "38%",
-                    style: Theme.of(
-                      context,
-                    ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                   progressColor: TURQUOISE_200, // Color of the progress line
                   backgroundColor:
@@ -85,9 +89,10 @@ class PerformanceCard extends StatelessWidget {
                 ),
                 Text(
                   S.of(context).work,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
@@ -99,9 +104,10 @@ class PerformanceCard extends StatelessWidget {
                   percent: 0.79, // Percentage (0.75 means 75%)
                   center: Text(
                     "79%",
-                    style: Theme.of(
-                      context,
-                    ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                   progressColor: TURQUOISE_200, // Color of the progress line
                   backgroundColor:
@@ -114,9 +120,10 @@ class PerformanceCard extends StatelessWidget {
                 ),
                 Text(
                   S.of(context).training,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
@@ -128,9 +135,10 @@ class PerformanceCard extends StatelessWidget {
                   percent: 0.87, // Percentage (0.75 means 75%)
                   center: Text(
                     "87%",
-                    style: Theme.of(
-                      context,
-                    ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                   progressColor: TURQUOISE_200, // Color of the progress line
                   backgroundColor:
@@ -143,9 +151,10 @@ class PerformanceCard extends StatelessWidget {
                 ),
                 Text(
                   S.of(context).courses,
-                  style: Theme.of(
-                    context,
-                  ).textTheme.labelSmall?.copyWith(fontSize: 16.sp),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
@@ -154,7 +163,13 @@ class PerformanceCard extends StatelessWidget {
         24.verticalSpace,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children: [BSecButton(text: S.of(context).viewMore)],
+          children: [
+            BSecButton(
+              text: S.of(context).viewMore,
+              enabled: false,
+              onPressed: () {},
+            ),
+          ],
         ),
       ],
     );

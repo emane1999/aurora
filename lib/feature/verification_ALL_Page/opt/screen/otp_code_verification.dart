@@ -4,6 +4,8 @@ import 'package:aurora/commentwidget/circlePainter.dart';
 import 'package:aurora/feature/verification_ALL_Page/opt/contorl/otp_contorl.dart';
 import 'package:aurora/feature/verification_ALL_Page/opt/screen/box_otp.dart';
 import 'package:aurora/generated/l10n.dart';
+import 'package:aurora/router/router_utils.dart';
+import 'package:aurora/theme/all_color.dart';
 import 'package:bond_form/bond_form.dart' as form;
 
 import 'package:flutter/material.dart';
@@ -28,11 +30,19 @@ class _OtpCodeVerificationState extends ConsumerState<OtpCodeVerification> {
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor:
+          Theme.of(context).brightness == Brightness.dark
+              ? GRAY_900
+              // Dark mode background color
+              : Theme.of(context).colorScheme.primary,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(144.0),
         child: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.primary,
+          backgroundColor:
+              Theme.of(context).brightness == Brightness.dark
+                  ? GRAY_900
+                  // Dark mode background color
+                  : Theme.of(context).colorScheme.primary,
           flexibleSpace: Stack(
             children: [
               Padding(
@@ -44,7 +54,9 @@ class _OtpCodeVerificationState extends ConsumerState<OtpCodeVerification> {
                     Text(
                       S.of(context).verification,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.surface,
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'AllRoundGothic',
                       ),
                     ),
                   ],
@@ -129,8 +141,7 @@ class _OtpCodeVerificationState extends ConsumerState<OtpCodeVerification> {
                       onPressed: () async {
                         await ref.read(otpCodeProvider.notifier).submit();
 
-                        // context
-                        //     .pushNamed(AppRoute.new_account_page.name);
+                        // context.pushNamed(AppRoute.new_account_page.name);
                       },
                     ),
                   ),
@@ -152,7 +163,7 @@ class _OtpCodeVerificationState extends ConsumerState<OtpCodeVerification> {
                               fontSize: 14.sp,
                               color: Theme.of(context).colorScheme.primary,
                               fontWeight: FontWeight.w500,
-                              fontFamily: 'Alexandria',
+                              fontFamily: 'Sora',
                               decoration: TextDecoration.underline,
                             ),
                           ),

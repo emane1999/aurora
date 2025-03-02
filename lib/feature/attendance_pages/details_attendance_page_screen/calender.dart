@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:aurora/commentwidget/card_com.dart';
 import 'package:aurora/theme/all_color.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +30,8 @@ class _CalendarState extends State<Calendar> {
 
   void _onDaySelected(DateTime selectedDay, DateTime focusedDay) {
     setState(() {
+      this.selectedDay = selectedDay; // Update selectedDay
+      this.focusedDay = focusedDay; // Update focusedDay
       if (startSelectedDay == null || endSelectedDay != null) {
         startSelectedDay = selectedDay;
         endSelectedDay = null;
@@ -48,6 +49,12 @@ class _CalendarState extends State<Calendar> {
     return CardCom(
       children: [
         TableCalendar(
+          selectedDayPredicate: (DateTime date) {
+            return isSameDay(
+              selectedDay,
+              date,
+            ); // Ensure both selected and focused days are correctly updated
+          },
           locale: Localizations.localeOf(context).languageCode,
           rowHeight: 60.0,
           daysOfWeekStyle: DaysOfWeekStyle(
@@ -55,13 +62,13 @@ class _CalendarState extends State<Calendar> {
               fontSize: 14.sp,
               color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w400,
-              fontFamily: 'Alexandria',
+              fontFamily: 'Sora',
             ),
             weekendStyle: TextStyle(
               fontSize: 14.sp,
               color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w400,
-              fontFamily: 'Alexandria',
+              fontFamily: 'Sora',
             ),
           ),
           focusedDay: selectedDay,
@@ -70,16 +77,19 @@ class _CalendarState extends State<Calendar> {
           calendarFormat: format,
           startingDayOfWeek: StartingDayOfWeek.sunday,
           onDaySelected: _onDaySelected,
-          selectedDayPredicate: (DateTime date) {
-            return isSameDay(selectedDay, date);
-          },
+
           calendarStyle: CalendarStyle(
             isTodayHighlighted: true,
             defaultTextStyle: TextStyle(
               fontSize: 14.sp,
-              color: Theme.of(context).colorScheme.onTertiary,
+              color:
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Theme.of(context).colorScheme.primary
+                      // Dark mode background color
+                      : Theme.of(context).colorScheme.onTertiary,
+
               fontWeight: FontWeight.w400,
-              fontFamily: 'Alexandria',
+              fontFamily: 'Sora',
             ),
             todayTextStyle: TextStyle(color: Colors.white),
             defaultDecoration: BoxDecoration(
@@ -145,22 +155,24 @@ class _CalendarState extends State<Calendar> {
                     width: 24.w,
                     height: 24.w,
                     decoration: BoxDecoration(
-                      color: SKY_BLUE_200,
+                      color: cyan_50,
                       borderRadius: BorderRadius.all(Radius.circular(4)),
                       shape: BoxShape.rectangle,
                     ),
                     child: Center(
                       child: Text(
                         '${day.day}',
-                        style: Theme.of(context).textTheme.labelMedium
-                            ?.copyWith(fontWeight: FontWeight.w600),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.labelMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: NAVY_50,
+                        ),
                       ),
                     ),
                   ),
                 );
               }
-
-              //
             },
           ),
           headerStyle: HeaderStyle(
@@ -170,15 +182,23 @@ class _CalendarState extends State<Calendar> {
               fontSize: 14.sp,
               color: Theme.of(context).colorScheme.primary,
               fontWeight: FontWeight.w600,
-              fontFamily: 'Alexandria',
+              fontFamily: 'Sora',
             ),
             leftChevronIcon: Icon(
               Icons.chevron_left,
-              color: Theme.of(context).colorScheme.tertiary,
+              color:
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Theme.of(context).colorScheme.primary
+                      // Dark mode background color
+                      : Theme.of(context).colorScheme.tertiary,
             ),
             rightChevronIcon: Icon(
               Icons.chevron_right,
-              color: Theme.of(context).colorScheme.tertiary,
+              color:
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Theme.of(context).colorScheme.primary
+                      // Dark mode background color
+                      : Theme.of(context).colorScheme.tertiary,
             ),
             headerPadding: const EdgeInsets.symmetric(vertical: 12.0),
             leftChevronPadding: const EdgeInsets.all(16.0),

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:aurora/commentwidget/b_sec_button.dart';
+import 'package:aurora/theme/all_color.dart';
 import 'package:aurora/theme/colors.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -47,9 +48,11 @@ class _BrandingLogoState extends State<BrandingLogo> {
                   side: WidgetStateProperty.all(
                     BorderSide(
                       color:
-                          Theme.of(
-                            context,
-                          ).colorScheme.tertiary, // Set custom border color
+                          Theme.of(context).brightness == Brightness.dark
+                              ? Theme.of(context).colorScheme.primary
+                              // Dark mode background color
+                              : Theme.of(context).colorScheme.tertiary,
+                      // Set custom border color
                       width: 1.0, // Set custom border width
                     ),
                   ),
@@ -59,7 +62,7 @@ class _BrandingLogoState extends State<BrandingLogo> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      'assets/images/Branding.svg',
+                      'assets/images/Brand Logo.svg',
                       width: 110.w,
                       height: 67.w,
                     ),
@@ -77,7 +80,7 @@ class _BrandingLogoState extends State<BrandingLogo> {
             16.verticalSpace,
             BSecButton(
               style: Theme.of(context).filledButtonTheme.style?.copyWith(
-                backgroundColor: WidgetStateProperty.all(SURFACE_NAV.light),
+                backgroundColor: WidgetStateProperty.all(NAVY_100),
                 padding: WidgetStateProperty.all(
                   EdgeInsetsDirectional.only(
                     top: 7,
@@ -89,6 +92,7 @@ class _BrandingLogoState extends State<BrandingLogo> {
               ),
               text: 'Replace Logo',
               onPressed: () {},
+              enabled: true,
             ),
           ],
         ),

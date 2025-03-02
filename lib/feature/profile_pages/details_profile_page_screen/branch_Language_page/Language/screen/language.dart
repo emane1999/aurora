@@ -1,4 +1,5 @@
 import 'package:aurora/commentwidget/b_button.dart';
+import 'package:aurora/commentwidget/b_sec_button.dart';
 import 'package:aurora/commentwidget/header_of_each_branch.dart';
 import 'package:aurora/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +35,10 @@ class _LanguageState extends State<Language> {
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.1.sh),
+        preferredSize: Size.fromHeight(.07.sh),
         child: HeaderOfEachBranch(
           title: 'Language',
-          preferredSize: Size.fromHeight(.1.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: Column(
@@ -58,7 +59,9 @@ class _LanguageState extends State<Language> {
                     activeColor: Theme.of(context).colorScheme.onSecondary,
                     title: Text(
                       ofLanguage[index],
-                      style: Theme.of(context).textTheme.labelLarge,
+                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                     value: ofLanguage[index],
                     groupValue: _selectedLanguage,
@@ -81,7 +84,21 @@ class _LanguageState extends State<Language> {
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [BButton(onPressed: () {}, "Save", enabled: true)],
+              children: [
+                BSecButton(
+                  style: Theme.of(context).filledButtonTheme.style?.copyWith(
+                    backgroundColor: WidgetStateProperty.all(
+                      Theme.of(context).brightness == Brightness.dark
+                          ? Theme.of(context).colorScheme.tertiary
+                          // Dark mode background color
+                          : Theme.of(context).colorScheme.onSecondary,
+                    ),
+                  ),
+                  onPressed: () {},
+                  enabled: true,
+                  text: "Save",
+                ),
+              ],
             ),
           ),
         ],

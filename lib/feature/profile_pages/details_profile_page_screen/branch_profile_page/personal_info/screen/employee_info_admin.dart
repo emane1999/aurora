@@ -1,6 +1,7 @@
 import 'package:aurora/commentwidget/header_of_each_branch.dart';
 import 'package:aurora/commentwidget/heading_all_text.dart';
 import 'package:aurora/commentwidget/person_des.dart';
+import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_profile_page/personal_info/screen/b_TextField_reade.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_profile_page/personal_info/screen/b_textField_edit.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_profile_page/personal_info/screen/countries.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_profile_page/personal_info/screen/cupertino_picker.dart';
@@ -23,10 +24,10 @@ class EmployeeInfoAdmin extends StatelessWidget {
     TextEditingController employeeNumber = TextEditingController(text: "#8700");
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.10.sh), // Set the height of the app bar
+        preferredSize: Size.fromHeight(.07.sh), // Set the height of the app bar
         child: HeaderOfEachBranch(
           title: 'Personal Info',
-          preferredSize: Size.fromHeight(.10.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: Column(
@@ -58,7 +59,7 @@ class EmployeeInfoAdmin extends StatelessWidget {
                   controller: fullName,
                   suffixIcon: Icon(
                     Icons.edit,
-                    color: Theme.of(context).colorScheme.tertiary,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                   readOnly: false,
                 ),
@@ -70,7 +71,7 @@ class EmployeeInfoAdmin extends StatelessWidget {
                   controller: position,
                   suffixIcon: Icon(
                     Icons.edit,
-                    color: Theme.of(context).colorScheme.tertiary,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                   readOnly: false,
                 ),
@@ -82,7 +83,7 @@ class EmployeeInfoAdmin extends StatelessWidget {
                   controller: employeeNumber,
                   suffixIcon: Icon(
                     Icons.edit,
-                    color: Theme.of(context).colorScheme.tertiary,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                   readOnly: false,
                 ),
@@ -104,7 +105,7 @@ class EmployeeInfoAdmin extends StatelessWidget {
                   // controller: TextEditingController(),
                   suffixIcon: Icon(
                     Icons.edit,
-                    color: Theme.of(context).colorScheme.tertiary,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   readOnly: false,
                 ),

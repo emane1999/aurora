@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:aurora/commentwidget/b_TextField.dart';
 import 'package:aurora/commentwidget/b_button.dart';
+import 'package:aurora/commentwidget/b_sec_button.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_assets_page/assets_page/contorl/asset_form_controller.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_assets_page/assets_page/screen/asset_type.dart';
 import 'package:bond_form/bond_form.dart';
@@ -64,10 +65,15 @@ class _ReturnRequestState extends ConsumerState<ReturnRequest> {
                   'Return Request',
                   style: Theme.of(
                     context,
-                  ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w500),
+                  ).textTheme.displayMedium?.copyWith(fontSize: 16.sp),
                 ),
                 Spacer(),
-                Icon(Icons.close),
+                InkWell(
+                  child: Icon(Icons.close),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
               ],
             ),
             25.verticalSpace,
@@ -87,11 +93,13 @@ class _ReturnRequestState extends ConsumerState<ReturnRequest> {
             24.verticalSpace,
             Text(
               "Notes / Comments",
-              style: Theme.of(context).textTheme.labelSmall,
+              style: Theme.of(
+                context,
+              ).textTheme.displayLarge?.copyWith(fontSize: 14.sp),
             ),
             8.verticalSpace,
             BTextField(
-              isfontWeights: true,
+              isfontWeights: false,
               inputType: TextInputType.number,
               lable: "Write your reason for returning this asset.",
               provider: assetFormProvider,
@@ -104,9 +112,10 @@ class _ReturnRequestState extends ConsumerState<ReturnRequest> {
             ),
             Text(
               'Attachment',
-              style: Theme.of(
-                context,
-              ).textTheme.labelMedium?.copyWith(fontWeight: FontWeight.w500),
+              style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                fontWeight: FontWeight.w500,
+                fontFamily: 'AllRoundGothic',
+              ),
             ),
             24.verticalSpace,
             _selectedFile == null
@@ -128,7 +137,12 @@ class _ReturnRequestState extends ConsumerState<ReturnRequest> {
                   ],
                 ),
             24.verticalSpace,
-            Text("Choose File", style: Theme.of(context).textTheme.labelMedium),
+            Text(
+              "Choose File",
+              style: Theme.of(
+                context,
+              ).textTheme.labelSmall?.copyWith(fontSize: 14.sp),
+            ),
             8.verticalSpace,
             SizedBox(
               width: 303.w,
@@ -160,8 +174,14 @@ class _ReturnRequestState extends ConsumerState<ReturnRequest> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  BButton(
+                  BSecButton(
                     style: Theme.of(context).filledButtonTheme.style?.copyWith(
+                      backgroundColor: WidgetStateProperty.all(
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Theme.of(context).colorScheme.tertiary
+                            // Dark mode background color
+                            : Theme.of(context).colorScheme.onSecondary,
+                      ),
                       padding: WidgetStateProperty.resolveWith(
                         (context) => EdgeInsetsDirectional.only(
                           start: 16.w,
@@ -171,7 +191,7 @@ class _ReturnRequestState extends ConsumerState<ReturnRequest> {
                         ),
                       ),
                     ),
-                    "Save Document",
+
                     enabled: true,
                     onPressed: () async {
                       ref
@@ -179,6 +199,7 @@ class _ReturnRequestState extends ConsumerState<ReturnRequest> {
                           .updateText('SerialNumber', _serialNumber.text);
                       await ref.read(assetFormProvider.notifier).submit();
                     },
+                    text: "Send Request",
                   ),
                 ],
               ),

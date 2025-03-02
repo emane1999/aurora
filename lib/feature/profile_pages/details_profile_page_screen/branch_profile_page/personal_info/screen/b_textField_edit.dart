@@ -10,16 +10,17 @@ class BTextfieldEdit extends StatelessWidget {
   final bool? readOnly;
   final Function(String)? onChanged;
   final TextInputType inputType;
-  const BTextfieldEdit(
-      {super.key,
-      this.controller,
-      this.hintText,
-      this.suffixIcon,
-      this.focusNode,
-      this.lable,
-      this.readOnly,
-      this.onChanged,
-      required this.inputType});
+  const BTextfieldEdit({
+    super.key,
+    this.controller,
+    this.hintText,
+    this.suffixIcon,
+    this.focusNode,
+    this.lable,
+    this.readOnly,
+    this.onChanged,
+    required this.inputType,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,37 +30,45 @@ class BTextfieldEdit extends StatelessWidget {
       children: [
         Text(
           lable ?? "",
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontFamily: 'AllRoundGothic',
+            fontWeight: FontWeight.w600,
+          ),
         ),
         8.verticalSpace,
         TextFormField(
           readOnly: readOnly!,
           style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                color: Theme.of(context).colorScheme.onTertiary,
-              ),
+            color: Theme.of(context).colorScheme.onSecondary,
+          ),
           controller: controller,
           focusNode: focusNode,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           textInputAction: TextInputAction.next,
           decoration: InputDecoration(
+            filled: true,
+
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Theme.of(context).colorScheme.tertiary,
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
             ),
             hintText: hintText,
             suffixIcon: suffixIcon,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(4.0)),
-              borderSide: readOnly!
-                  ? BorderSide(color: Colors.transparent)
-                  : BorderSide(color: Theme.of(context).colorScheme.tertiary),
+              borderSide:
+                  readOnly!
+                      ? BorderSide(color: Colors.transparent)
+                      : BorderSide(
+                        color: Theme.of(context).colorScheme.onSecondary,
+                      ),
             ),
           ),
           autocorrect: false,
           keyboardType: inputType,
           onChanged: onChanged,
-        )
+        ),
       ],
     );
   }

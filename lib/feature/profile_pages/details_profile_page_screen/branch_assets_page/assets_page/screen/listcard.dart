@@ -1,4 +1,5 @@
 import 'package:aurora/commentwidget/b_button.dart';
+import 'package:aurora/commentwidget/b_sec_button.dart';
 import 'package:aurora/commentwidget/details_requst.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
@@ -57,11 +58,16 @@ class Listcard extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          BButton(
-                            "Request Return",
+                          BSecButton(
                             style: Theme.of(
                               context,
                             ).filledButtonTheme.style?.copyWith(
+                              backgroundColor: WidgetStateProperty.all(
+                                Theme.of(context).brightness == Brightness.dark
+                                    ? Theme.of(context).colorScheme.tertiary
+                                    // Dark mode background color
+                                    : Theme.of(context).colorScheme.onSecondary,
+                              ),
                               padding: WidgetStateProperty.resolveWith(
                                 (context) => EdgeInsetsDirectional.only(
                                   start: 12.w,
@@ -73,6 +79,7 @@ class Listcard extends StatelessWidget {
                             ),
                             enabled: true,
                             onPressed: () {},
+                            text: "Request Return",
                           ),
                         ],
                       ),

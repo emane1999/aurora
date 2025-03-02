@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:aurora/commentwidget/b_button.dart';
+import 'package:aurora/commentwidget/b_sec_button.dart';
 import 'package:aurora/commentwidget/header_of_each_branch.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_customizations_admin/customizations_admin_page/screen/brand_color.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_customizations_admin/customizations_admin_page/screen/branding_logo.dart';
@@ -8,6 +9,7 @@ import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_customizations_admin/customizations_admin_page/screen/font_family.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_customizations_admin/customizations_admin_page/screen/header_cust.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_customizations_admin/customizations_admin_page/screen/slider_shape_widget.dart';
+import 'package:aurora/theme/all_color.dart';
 import 'package:aurora/theme/colors.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -28,10 +30,10 @@ class _CustomizationsAdminState extends State<CustomizationsAdmin> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.1.sh),
+        preferredSize: Size.fromHeight(.07.sh),
         child: HeaderOfEachBranch(
           title: 'Customizations',
-          preferredSize: Size.fromHeight(.1.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: ListView(
@@ -89,7 +91,16 @@ class _CustomizationsAdminState extends State<CustomizationsAdmin> {
           12.verticalSpace,
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [BButton(enabled: true, "Save", onPressed: () {})],
+            children: [
+              BSecButton(
+                enabled: true,
+                onPressed: () {},
+                text: "Save",
+                style: Theme.of(context).filledButtonTheme.style?.copyWith(
+                  backgroundColor: WidgetStateProperty.all(NAVY_100),
+                ),
+              ),
+            ],
           ),
         ],
       ),

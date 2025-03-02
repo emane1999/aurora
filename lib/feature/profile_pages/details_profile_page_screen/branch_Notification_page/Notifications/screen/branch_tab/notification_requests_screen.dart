@@ -54,7 +54,11 @@ class NotificationRequestsScreen extends StatelessWidget {
                         style: Theme.of(
                           context,
                         ).textTheme.labelMedium?.copyWith(
-                          color: Theme.of(context).colorScheme.onTertiary,
+                          color:
+                              Theme.of(context).brightness == Brightness.dark
+                                  ? Theme.of(context).colorScheme.primary
+                                  // Dark mode background color
+                                  : Theme.of(context).colorScheme.onTertiary,
                           fontWeight: FontWeight.w400,
                         ),
                       ),

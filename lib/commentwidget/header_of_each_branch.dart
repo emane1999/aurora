@@ -57,7 +57,7 @@ class HeaderOfEachBranch extends StatelessWidget {
             title,
             style: Theme.of(
               context,
-            ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w300),
+            ).textTheme.displayLarge?.copyWith(fontSize: 16.sp),
           ),
         ],
       ),

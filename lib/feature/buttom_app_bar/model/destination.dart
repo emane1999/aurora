@@ -9,7 +9,7 @@ class Destination {
 
 const destinations = [
   Destination(label: 'Home', icon: Icons.home),
-  Destination(label: 'Attendance', icon: Icons.calculate_rounded),
-  Destination(label: 'Requests', icon: Icons.receipt),
-  Destination(label: 'Profile', icon: Icons.person_rounded),
+  Destination(label: 'Attendance', icon: Icons.today),
+  Destination(label: 'Requests', icon: Icons.inbox),
+  Destination(label: 'Profile', icon: Icons.account_circle),
 ];
