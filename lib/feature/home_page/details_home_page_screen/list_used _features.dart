@@ -12,19 +12,35 @@ class ListUsedFeatures extends StatelessWidget {
     final features = [
       ItemFeature(
         nameFeature: S.of(context).punchCorrection,
-        imagefeature: 'assets/images/Fingerprint (1).svg',
+        Iconsfeature: Icon(
+          Icons.fingerprint,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        isCheckType: true,
       ),
       ItemFeature(
         nameFeature: S.of(context).leaveRequest,
-        imagefeature: 'assets/images/Icons (2).svg',
+        Iconsfeature: Icon(
+          Icons.schedule,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        isCheckType: true,
       ),
       ItemFeature(
         nameFeature: S.of(context).loanRequest,
-        imagefeature: 'assets/images/vectors.svg',
+        Iconsfeature: Icon(
+          Icons.request_quote_outlined,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        isCheckType: true,
       ),
       ItemFeature(
         nameFeature: S.of(context).newRequest,
-        imagefeature: 'assets/images/Icons (3).svg',
+        Iconsfeature: Icon(
+          Icons.add_circle_outline,
+          color: Theme.of(context).colorScheme.primary,
+        ),
+        isCheckType: true,
       ),
     ];
     return SizedBox(
@@ -46,16 +62,13 @@ class ListUsedFeatures extends StatelessWidget {
                   spacing: 12,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SvgPicture.asset(
-                      features[index].imagefeature,
-                      width: 24.w,
-                      height: 24.w,
-                    ),
+                    features[index].Iconsfeature!,
                     Text(
                       features[index].nameFeature,
-                      style: Theme.of(
-                        context,
-                      ).textTheme.labelSmall?.copyWith(fontSize: 12.sp),
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ],
                 ),

@@ -8,12 +8,16 @@ import 'package:aurora/feature/main_page/main_page.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_Language_page/Language/screen/language.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_Notification_page/Notifications/screen/notification_info.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_assets_page/assets_page/screen/assets.dart';
+import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_contract_page/contract/screen/admin/contract_admin.dart';
+import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_contract_page/contract/screen/user/contract.dart';
+import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_contract_page/contract/screen/user/prson_details.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_courses%20_training_page/courses_Training_page/courses_training.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_customizations_admin/customizations_admin_page/screen/customizations_admin.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_docement_page/documents_page/screen/documents.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_finance%20_salary_page/finance_salary/screen/finance_salary.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_leaves_%20vacations_page/leaves%20_vacations/Leaves_vacations_page.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_organizational_page/organizational_onfo/screen/organizational%20_info%20_%20user.dart';
+import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_profile_page/personal_info/screen/employee_info_admin.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_profile_page/personal_info/screen/personal_info.dart';
 import 'package:aurora/feature/splash/splash_screen.dart';
 import 'package:aurora/feature/verification_ALL_Page/create_new_account_%20page/screen/new_account.dart';
@@ -36,15 +40,15 @@ GoRouter routerProvider(Ref ref) {
   return GoRouter(
     navigatorKey: _keyNavegator,
     debugLogDiagnostics: true,
-    redirect: (context, state) {
-      final authState = ref.watch(authStateProvider);
-      print(authState);
-      if (authState == true) {
-        return AppRoute.home_page.toPath;
-      } else {
-        return null;
-      }
-    },
+    // redirect: (context, state) {
+    //   final authState = ref.watch(authStateProvider);
+    //   print(authState);
+    //   if (authState == true) {
+    //     return AppRoute.home_page.toPath;
+    //   } else {
+    //     return null;
+    //   }
+    // },
     // AppRoute.personal_Info.toPath,
     initialLocation: "/",
     routes: [
@@ -148,10 +152,17 @@ GoRouter routerProvider(Ref ref) {
         },
       ),
       GoRoute(
+        path: AppRoute.contract.toPath,
+        name: AppRoute.contract.toName,
+        builder: (context, state) {
+          return ContractAdmin();
+        },
+      ),
+      GoRoute(
         path: AppRoute.personal_Info.toPath,
         name: AppRoute.personal_Info.toName,
         builder: (context, state) {
-          return PersonalInfo();
+          return EmployeeInfoAdmin();
         },
       ),
       GoRoute(

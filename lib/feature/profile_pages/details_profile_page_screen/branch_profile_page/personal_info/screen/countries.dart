@@ -40,7 +40,13 @@ class _CountriesState extends State<Countries> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Country", style: Theme.of(context).textTheme.labelSmall),
+        Text(
+          "Country",
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontFamily: 'AllRoundGothic',
+            fontWeight: FontWeight.w600,
+          ),
+        ),
         8.verticalSpace,
         Center(
           child: DropdownButtonHideUnderline(
@@ -48,7 +54,7 @@ class _CountriesState extends State<Countries> {
               iconStyleData: IconStyleData(
                 icon: Icon(Icons.arrow_drop_down),
                 iconSize: 24,
-                iconEnabledColor: Theme.of(context).colorScheme.onTertiary,
+                iconEnabledColor: Theme.of(context).colorScheme.onSecondary,
               ),
               isExpanded: true,
               hint: Padding(
@@ -68,7 +74,7 @@ class _CountriesState extends State<Countries> {
                             style: Theme.of(
                               context,
                             ).textTheme.labelMedium?.copyWith(
-                              color: Theme.of(context).colorScheme.primary,
+                              color: Theme.of(context).colorScheme.onSecondary,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -95,7 +101,7 @@ class _CountriesState extends State<Countries> {
                   border:
                       countresStatu != null
                           ? Border.all(
-                            color: Theme.of(context).colorScheme.tertiary,
+                            color: Theme.of(context).colorScheme.primary,
                           )
                           : Border.all(color: Colors.transparent),
                   borderRadius: BorderRadius.circular(4),

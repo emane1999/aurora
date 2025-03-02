@@ -37,90 +37,97 @@ class _CupertinoPickersState extends State<CupertinoPickers> {
     'September',
     'October',
     'November',
-    'December'
+    'December',
   ];
 
-  final List<String> _days =
-      List<String>.generate(31, (index) => (index + 1).toString());
+  final List<String> _days = List<String>.generate(
+    31,
+    (index) => (index + 1).toString(),
+  );
 
-  final List<String> _years =
-      List<String>.generate(126, (index) => (1900 + index).toString());
+  final List<String> _years = List<String>.generate(
+    126,
+    (index) => (1900 + index).toString(),
+  );
 
   void _showDialog() {
     showCupertinoModalPopup<void>(
       context: context,
-      builder: (BuildContext context) => Container(
-        height: 230,
-        padding: const EdgeInsets.only(top: 6.0),
-        margin: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
-        color: CupertinoColors.systemBackground.resolveFrom(context),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: CupertinoPicker(
-                magnification: 1.22,
-                squeeze: 1.2,
-                useMagnifier: true,
-                itemExtent: _kItemExtent,
-                scrollController: FixedExtentScrollController(
-                  initialItem: _selectedMonth,
-                ),
-                onSelectedItemChanged: (int selectedItem) {
-                  setState(() {
-                    _selectedMonth = selectedItem;
-                  });
-                },
-                children: List<Widget>.generate(_months.length, (int index) {
-                  return Center(child: Text(_months[index]));
-                }),
-              ),
+      builder:
+          (BuildContext context) => Container(
+            height: 230,
+            padding: const EdgeInsets.only(top: 6.0),
+            margin: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom,
             ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: CupertinoPicker(
-                magnification: 1.22,
-                squeeze: 1.2,
-                useMagnifier: true,
-                itemExtent: _kItemExtent,
-                scrollController: FixedExtentScrollController(
-                  initialItem: _selectedDay,
+            color: CupertinoColors.systemBackground.resolveFrom(context),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: CupertinoPicker(
+                    magnification: 1.22,
+                    squeeze: 1.2,
+                    useMagnifier: true,
+                    itemExtent: _kItemExtent,
+                    scrollController: FixedExtentScrollController(
+                      initialItem: _selectedMonth,
+                    ),
+                    onSelectedItemChanged: (int selectedItem) {
+                      setState(() {
+                        _selectedMonth = selectedItem;
+                      });
+                    },
+                    children: List<Widget>.generate(_months.length, (
+                      int index,
+                    ) {
+                      return Center(child: Text(_months[index]));
+                    }),
+                  ),
                 ),
-                onSelectedItemChanged: (int selectedItem) {
-                  setState(() {
-                    _selectedDay = selectedItem;
-                  });
-                },
-                children: List<Widget>.generate(_days.length, (int index) {
-                  return Center(child: Text(_days[index]));
-                }),
-              ),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: CupertinoPicker(
-                magnification: 1.22,
-                squeeze: 1.2,
-                useMagnifier: true,
-                itemExtent: _kItemExtent,
-                scrollController: FixedExtentScrollController(
-                  initialItem: _selectedYear,
+                const SizedBox(width: 16),
+                Expanded(
+                  child: CupertinoPicker(
+                    magnification: 1.22,
+                    squeeze: 1.2,
+                    useMagnifier: true,
+                    itemExtent: _kItemExtent,
+                    scrollController: FixedExtentScrollController(
+                      initialItem: _selectedDay,
+                    ),
+                    onSelectedItemChanged: (int selectedItem) {
+                      setState(() {
+                        _selectedDay = selectedItem;
+                      });
+                    },
+                    children: List<Widget>.generate(_days.length, (int index) {
+                      return Center(child: Text(_days[index]));
+                    }),
+                  ),
                 ),
-                onSelectedItemChanged: (int selectedItem) {
-                  setState(() {
-                    _selectedYear = selectedItem;
-                  });
-                },
-                children: List<Widget>.generate(_years.length, (int index) {
-                  return Center(child: Text(_years[index]));
-                }),
-              ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: CupertinoPicker(
+                    magnification: 1.22,
+                    squeeze: 1.2,
+                    useMagnifier: true,
+                    itemExtent: _kItemExtent,
+                    scrollController: FixedExtentScrollController(
+                      initialItem: _selectedYear,
+                    ),
+                    onSelectedItemChanged: (int selectedItem) {
+                      setState(() {
+                        _selectedYear = selectedItem;
+                      });
+                    },
+                    children: List<Widget>.generate(_years.length, (int index) {
+                      return Center(child: Text(_years[index]));
+                    }),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
     );
   }
 
@@ -138,25 +145,29 @@ class _CupertinoPickersState extends State<CupertinoPickers> {
           children: <Widget>[
             Text(
               ' Birthday:',
-              style: Theme.of(context).textTheme.labelSmall,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                fontFamily: 'AllRoundGothic',
+                fontWeight: FontWeight.w600,
+              ),
             ),
             8.verticalSpace,
             CupertinoButton(
               padding: EdgeInsets.zero,
               onPressed: _showDialog,
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 14,
+                ),
                 decoration: BoxDecoration(
-                  border: (_selectedMonth != 0 &&
-                          _selectedDay != 0 &&
-                          _selectedYear != 0)
-                      ? Border.all(
-                          color: Theme.of(context).colorScheme.tertiary,
-                        )
-                      : Border.all(
-                          color: Colors.transparent,
-                        ),
+                  border:
+                      (_selectedMonth != 0 &&
+                              _selectedDay != 0 &&
+                              _selectedYear != 0)
+                          ? Border.all(
+                            color: Theme.of(context).colorScheme.primary,
+                          )
+                          : Border.all(color: Colors.transparent),
                   color: Theme.of(context).colorScheme.surfaceContainerHigh,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -175,18 +186,18 @@ class _CupertinoPickersState extends State<CupertinoPickers> {
                     else
                       Expanded(
                         child: Text(
-                            '${_months[_selectedMonth]} /${_days[_selectedDay]} /${_years[_selectedYear]}',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                  color: Theme.of(context).colorScheme.primary,
-                                  fontWeight: FontWeight.w400,
-                                )),
+                          '${_months[_selectedMonth]} /${_days[_selectedDay]} /${_years[_selectedYear]}',
+                          style: Theme.of(
+                            context,
+                          ).textTheme.labelMedium?.copyWith(
+                            color: Theme.of(context).colorScheme.onSecondary,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
                       ),
                     Icon(
                       CupertinoIcons.calendar,
-                      color: Theme.of(context).colorScheme.onTertiary,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ],
                 ),

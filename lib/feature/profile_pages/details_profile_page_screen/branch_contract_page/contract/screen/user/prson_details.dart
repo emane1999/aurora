@@ -27,10 +27,9 @@ class PrsonDetails extends ConsumerWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/preson.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.perm_identity,
+              color: Theme.of(context).colorScheme.primary,
             ),
             DetailsRequst(
               tite: 'Position:',
@@ -42,11 +41,7 @@ class PrsonDetails extends ConsumerWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/clock_in.svg',
-              width: 24.w,
-              height: 24.w,
-            ),
+            Icon(Icons.schedule, color: Theme.of(context).colorScheme.primary),
             DetailsRequst(
               tite: 'End Date:',
               subTite: jobDetails?.duration ?? '',

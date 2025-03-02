@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:aurora/commentwidget/heading_all_text.dart';
 import 'package:aurora/feature/buttom_app_bar/screen/header_home.dart';
 import 'package:aurora/feature/home_page/details_home_page_screen/list_used%20_features.dart';
@@ -44,23 +43,6 @@ class _HomePageState extends State<HomePage> {
         HeadingAllText(indexToSearch: 3),
         12.verticalSpace,
         YourRequests(),
-        12.verticalSpace,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            SvgPicture.asset(
-              'assets/images/Icons (4).svg',
-              width: 24.w,
-              height: 24.w,
-            ),
-            8.horizontalSpace,
-            SvgPicture.asset(
-              'assets/images/Icons (5).svg',
-              width: 24.w,
-              height: 24.w,
-            ),
-          ],
-        ),
         24.verticalSpace,
         HeadingAllText(indexToSearch: 4),
         12.verticalSpace,

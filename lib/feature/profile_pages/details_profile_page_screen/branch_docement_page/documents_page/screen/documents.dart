@@ -16,10 +16,10 @@ class Documents extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.1.sh),
+        preferredSize: Size.fromHeight(.07.sh),
         child: HeaderOfEachBranch(
           title: 'Documents',
-          preferredSize: Size.fromHeight(.1.sh),
+          preferredSize: Size.fromHeight(.07.sh),
           showIcon: true,
           icon: Icon(Icons.add, color: Theme.of(context).colorScheme.primary),
           onPressed: () {

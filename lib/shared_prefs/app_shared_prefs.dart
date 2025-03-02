@@ -31,6 +31,10 @@ class AppSharedPrefs {
     return ThemeMode.values[themeValue];
   }
 
+  Future<void> updateThemeMode(ThemeMode theme) async {
+    await _prefs!.setInt(_themeKey, theme.index);
+  }
+
   Future<String?> UrlWorkspaceGet() async {
     String? url = _prefs!.getString("db_url");
     return url;
@@ -42,9 +46,5 @@ class AppSharedPrefs {
 
   Future<void> RemoveOutWorkspace() async {
     await _prefs!.remove("db_url");
-  }
-
-  Future<void> updateThemeMode(ThemeMode theme) async {
-    await _prefs!.setInt(_themeKey, theme.index);
   }
 }

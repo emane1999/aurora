@@ -8,15 +8,13 @@ class HeaderHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(
-        tite,
-        style: Theme.of(context).textTheme.displaySmall?.copyWith(
-              fontWeight: FontWeight.w300,
-            ),
-      ),
-      12.verticalSpace,
-      Divider()
-    ]);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(tite, style: Theme.of(context).textTheme.displayLarge),
+        12.verticalSpace,
+        Divider(),
+      ],
+    );
   }
 }

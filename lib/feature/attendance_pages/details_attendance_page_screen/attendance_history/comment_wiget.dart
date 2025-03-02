@@ -13,17 +13,29 @@ class CommentWiget extends StatelessWidget {
   Widget build(BuildContext context) {
     final todaysitem = [
       Todays(
-        icon: 'assets/images/clock_in.svg',
+        icon: Icon(
+          Icons.restore,
+          color: Theme.of(context).colorScheme.primary,
+          size: 30,
+        ),
         title: S.of(context).clockIn,
         subtitle: '9:00AM',
       ),
       Todays(
-        icon: 'assets/images/today.svg',
+        icon: Icon(
+          Icons.today,
+          color: Theme.of(context).colorScheme.primary,
+          size: 30,
+        ),
         title: S.of(context).date,
         subtitle: 'Thurs, 28 \nOct 2024',
       ),
       Todays(
-        icon: 'assets/images/clock_out.svg',
+        icon: Icon(
+          Icons.history,
+          color: Theme.of(context).colorScheme.primary,
+          size: 30,
+        ),
         title: S.of(context).clockOut,
         subtitle: '5:00 PM',
       ),
@@ -40,11 +52,8 @@ class CommentWiget extends StatelessWidget {
             itemBuilder: (context, index) {
               return Column(
                 children: [
-                  SvgPicture.asset(
-                    todaysitem[index].icon,
-                    width: 24.w,
-                    height: 24.w,
-                  ),
+                  todaysitem[index].icon,
+
                   Text(
                     todaysitem[index].title,
                     style: Theme.of(context).textTheme.labelMedium?.copyWith(

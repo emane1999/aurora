@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:aurora/commentwidget/b_TextField.dart';
 import 'package:aurora/commentwidget/b_button.dart';
+import 'package:aurora/commentwidget/b_sec_button.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_docement_page/documents_page/contorl/file_form_controller.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_docement_page/documents_page/screen/document_type.dart';
 import 'package:bond_form/bond_form.dart' as bond_form;
@@ -131,7 +132,7 @@ class _NewDocumentState extends ConsumerState<NewDocument> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  BButton(
+                  BSecButton(
                     style: Theme.of(context).filledButtonTheme.style?.copyWith(
                       padding: WidgetStateProperty.resolveWith(
                         (context) => EdgeInsetsDirectional.only(
@@ -141,8 +142,15 @@ class _NewDocumentState extends ConsumerState<NewDocument> {
                           bottom: 4,
                         ),
                       ),
+                      backgroundColor: WidgetStateProperty.all(
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Theme.of(context).colorScheme.tertiary
+                            // Dark mode background color
+                            : Theme.of(context).colorScheme.onSecondary,
+                      ),
+                      // Light mode background color
                     ),
-                    "Save Document",
+
                     enabled: true,
                     onPressed: () async {
                       ref
@@ -150,6 +158,7 @@ class _NewDocumentState extends ConsumerState<NewDocument> {
                           .updateText('documentName', _documeneName.text);
                       await ref.read(fileFormProvider.notifier).submit();
                     },
+                    text: "Save Document",
                   ),
                 ],
               ),

@@ -75,7 +75,11 @@ class _VerificationPageState extends ConsumerState<VerificationPage> {
                       flex: 1,
                       child: TextFormField(
                         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: Theme.of(context).colorScheme.onTertiary,
+                          color:
+                              Theme.of(context).brightness == Brightness.dark
+                                  ? Theme.of(context).colorScheme.primary
+                                  // Dark mode background color
+                                  : Theme.of(context).colorScheme.onTertiary,
                         ),
                         controller: _mobileNumberController,
                         autovalidateMode: AutovalidateMode.onUserInteraction,

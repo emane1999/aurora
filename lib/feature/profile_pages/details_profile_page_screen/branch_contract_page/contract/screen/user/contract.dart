@@ -14,10 +14,10 @@ class Contract extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.1.sh),
+        preferredSize: Size.fromHeight(.07.sh),
         child: HeaderOfEachBranch(
           title: 'Contract',
-          preferredSize: Size.fromHeight(.1.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: Consumer(

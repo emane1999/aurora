@@ -1,7 +1,7 @@
-import 'package:aurora/theme/all_color.dart';
-import 'package:aurora/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'all_color.dart';
+import 'colors.dart';
 
 class GlobalThemData {
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
@@ -50,13 +50,13 @@ class GlobalThemData {
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           padding: EdgeInsetsDirectional.only(
-            start: 32.w,
+            start: 24.w,
             top: 8.w,
-            end: 32.w,
+            end: 24.w,
             bottom: 8.w,
           ),
           foregroundColor: colorScheme.primary,
-          backgroundColor: colorScheme.onPrimary,
+          backgroundColor: Colors.transparent,
           alignment: Alignment.center,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         ),
@@ -71,14 +71,14 @@ class GlobalThemData {
               fontSize: 12.sp,
               color: colorScheme.onSecondary,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Alexandria',
+              fontFamily: 'Sora',
             );
           }
           return TextStyle(
             fontSize: 12.sp,
             color: colorScheme.primary,
             fontWeight: FontWeight.w300,
-            fontFamily: 'Alexandria',
+            fontFamily: 'Sora',
           );
         }),
         iconTheme: WidgetStateProperty.resolveWith<IconThemeData>((
@@ -92,41 +92,59 @@ class GlobalThemData {
         }),
       ),
       textTheme: TextTheme(
+        displayLarge: TextStyle(
+          fontSize: 18.sp,
+          color: colorScheme.primary,
+          fontWeight: FontWeight.w900,
+          fontFamily: 'Nunito',
+        ),
         displaySmall: TextStyle(
           fontSize: 18.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w600,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
+        ),
+        displayMedium: TextStyle(
+          fontSize: 32.sp,
+          color: colorScheme.primary,
+          fontWeight: FontWeight.w600,
+          fontFamily: 'AllRoundGothic',
+        ),
+        headlineLarge: TextStyle(
+          fontSize: 34.sp,
+          color: colorScheme.primary,
+          fontWeight: FontWeight.w800,
+          fontFamily: 'Nunito',
         ),
         headlineSmall: TextStyle(
           fontSize: 24.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w700,
-          fontFamily: 'BCAlphapipe',
+          fontFamily: 'AllRoundGothic',
         ),
         titleMedium: TextStyle(
           fontSize: 24.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w400,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         labelLarge: TextStyle(
           fontSize: 16.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w400,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         labelMedium: TextStyle(
           fontSize: 14.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w300,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         labelSmall: TextStyle(
           fontSize: 12.sp,
           color: colorScheme.primary,
-          fontWeight: FontWeight.w500,
-          fontFamily: 'Alexandria',
+          fontWeight: FontWeight.w300,
+          fontFamily: 'Sora',
         ),
       ),
       tabBarTheme: TabBarTheme(
@@ -146,7 +164,7 @@ class GlobalThemData {
           fontSize: 12.sp,
           color: colorScheme.onError,
           fontWeight: FontWeight.w300,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
         enabledBorder: OutlineInputBorder(
@@ -173,7 +191,7 @@ class GlobalThemData {
           fontSize: 12.sp,
           color: colorScheme.onSurfaceVariant,
           fontWeight: FontWeight.w300,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         fillColor: colorScheme.surfaceContainerHigh,
         contentPadding: EdgeInsets.all(8),
@@ -197,14 +215,14 @@ class GlobalThemData {
               fontSize: 12.sp,
               color: colorScheme.onSecondary,
               fontWeight: FontWeight.w500,
-              fontFamily: 'Alexandria',
+              fontFamily: 'Sora',
             );
           }
           return TextStyle(
             fontSize: 12.sp,
             color: colorScheme.primary,
             fontWeight: FontWeight.w300,
-            fontFamily: 'Alexandria',
+            fontFamily: 'Sora',
           );
         }),
         iconTheme: WidgetStateProperty.resolveWith<IconThemeData>((
@@ -234,41 +252,59 @@ class GlobalThemData {
         endIndent: 256,
       ),
       textTheme: TextTheme(
+        displayLarge: TextStyle(
+          fontSize: 18.sp,
+          color: colorScheme.primary,
+          fontWeight: FontWeight.w900,
+          fontFamily: 'Nunito',
+        ),
+        displayMedium: TextStyle(
+          fontSize: 32.sp,
+          color: colorScheme.primary,
+          fontWeight: FontWeight.w600,
+          fontFamily: 'AllRoundGothic',
+        ),
         displaySmall: TextStyle(
           fontSize: 18.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w600,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
+        ),
+        headlineLarge: TextStyle(
+          fontSize: 34.sp,
+          color: colorScheme.primary,
+          fontWeight: FontWeight.w800,
+          fontFamily: 'Nunito',
         ),
         headlineSmall: TextStyle(
           fontSize: 24.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w700,
-          fontFamily: 'BCAlphapipe',
+          fontFamily: 'AllRoundGothic',
         ),
         titleMedium: TextStyle(
           fontSize: 24.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w700,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         labelLarge: TextStyle(
           fontSize: 16.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w400,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         labelMedium: TextStyle(
           fontSize: 14.sp,
           color: colorScheme.primary,
           fontWeight: FontWeight.w300,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         labelSmall: TextStyle(
           fontSize: 12.sp,
           color: colorScheme.primary,
-          fontWeight: FontWeight.w500,
-          fontFamily: 'Alexandria',
+          fontWeight: FontWeight.w300,
+          fontFamily: 'Sora',
         ),
       ),
       textButtonTheme: TextButtonThemeData(
@@ -286,7 +322,7 @@ class GlobalThemData {
           fontSize: 12.sp,
           color: colorScheme.onError,
           fontWeight: FontWeight.w300,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         floatingLabelBehavior: FloatingLabelBehavior.never,
         disabledBorder: OutlineInputBorder(
@@ -297,7 +333,7 @@ class GlobalThemData {
           fontSize: 14.sp,
           color: colorScheme.onSurfaceVariant,
           fontWeight: FontWeight.w400,
-          fontFamily: 'Alexandria',
+          fontFamily: 'Sora',
         ),
         fillColor: colorScheme.onSurfaceVariant,
         contentPadding: EdgeInsets.all(8),
@@ -327,8 +363,9 @@ class GlobalThemData {
     onPrimary: SKY_BLUE_250,
     onPrimaryContainer: GRAY_50,
     secondary: NAVY_200,
-    onSecondary: TEXT_SECONDARY.dark,
+    onSecondary: TechnoWhite,
     onSecondaryContainer: SURFACE_PRIMARY.dark,
+    tertiary: TEXT_SECONDARY.light,
     onTertiary: TEXT_TERTIARY.dark,
     surface: SURFACE_BASE.dark,
     onSurface: SURFACE_DISABLED.dark,

@@ -1,6 +1,7 @@
 import 'package:aurora/app_lang/app_language_provider.dart';
 import 'package:aurora/commentwidget/button_arabic_en.dart';
 import 'package:aurora/commentwidget/circlePainter.dart';
+import 'package:aurora/theme/all_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,12 @@ class BasisVer extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor:
+          Theme.of(context).brightness == Brightness.dark
+              ? GRAY_900
+              // Dark mode background color
+              : Theme.of(context).colorScheme.primary,
+
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(150.0.w),
         child: AppBar(
@@ -27,7 +33,12 @@ class BasisVer extends ConsumerWidget {
             child: Icon(Icons.arrow_back),
             onTap: () => context.pop(),
           ),
-          backgroundColor: Theme.of(context).colorScheme.primary,
+          backgroundColor:
+              Theme.of(context).brightness == Brightness.dark
+                  ? GRAY_900
+                  // Dark mode background color
+                  : Theme.of(context).colorScheme.primary,
+
           flexibleSpace: Stack(
             children: [
               Padding(
@@ -39,7 +50,9 @@ class BasisVer extends ConsumerWidget {
                     Text(
                       textpage!,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.surface,
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'AllRoundGothic',
                       ),
                     ),
                   ],
@@ -95,7 +108,10 @@ class BasisVer extends ConsumerWidget {
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
-              svgPicture: 'assets/images/Icon.svg',
+              icons: Icon(
+                Icons.language,
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
           ],
         ),

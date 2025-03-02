@@ -49,13 +49,19 @@ Widget _download(BuildContext context) {
       Text(
         "Salary of July 2024",
         style: Theme.of(context).textTheme.labelLarge?.copyWith(
+          fontWeight: FontWeight.w600,
           color: Theme.of(context).colorScheme.onSecondary,
         ),
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Download", style: Theme.of(context).textTheme.labelSmall),
+          Text(
+            "Download",
+            style: Theme.of(
+              context,
+            ).textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w600),
+          ),
           8.horizontalSpace,
           Icon(
             Icons.download,
@@ -63,7 +69,7 @@ Widget _download(BuildContext context) {
             size: 24,
           ),
           Spacer(),
-          BSecButton(text: 'View'),
+          BSecButton(text: 'View', enabled: true, onPressed: () {}),
         ],
       ),
     ],

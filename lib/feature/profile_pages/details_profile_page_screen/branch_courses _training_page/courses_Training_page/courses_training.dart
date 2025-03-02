@@ -11,10 +11,10 @@ class CoursesTraining extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.1.sh),
+        preferredSize: Size.fromHeight(.07.sh),
         child: HeaderOfEachBranch(
           title: 'Courses & Training',
-          preferredSize: Size.fromHeight(.1.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: Padding(
@@ -23,7 +23,12 @@ class CoursesTraining extends StatelessWidget {
           spacing: 12,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Courses", style: Theme.of(context).textTheme.displaySmall),
+            Text(
+              "Courses",
+              style: Theme.of(
+                context,
+              ).textTheme.displayMedium?.copyWith(fontSize: 18.sp),
+            ),
             CardCom(
               children: [
                 Training(),

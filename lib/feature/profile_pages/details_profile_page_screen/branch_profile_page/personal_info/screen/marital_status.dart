@@ -3,12 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:collection/collection.dart';
 
-enum MaritalStatu {
-  single,
-  married,
-  divorced,
-  widowed,
-}
+enum MaritalStatu { single, married, divorced, widowed }
 
 class MaritalStatus extends StatefulWidget {
   final String? selected;
@@ -35,18 +30,19 @@ class _MaritalStatusState extends State<MaritalStatus> {
       children: [
         Text(
           "Marital Status",
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontFamily: 'AllRoundGothic',
+            fontWeight: FontWeight.w600,
+          ),
         ),
         8.verticalSpace,
         Center(
           child: DropdownButtonHideUnderline(
             child: DropdownButton2<MaritalStatu>(
               iconStyleData: IconStyleData(
-                icon: Icon(
-                  Icons.arrow_drop_down,
-                ),
+                icon: Icon(Icons.arrow_drop_down),
                 iconSize: 24,
-                iconEnabledColor: Theme.of(context).colorScheme.onTertiary,
+                iconEnabledColor: Theme.of(context).colorScheme.primary,
               ),
               isExpanded: true,
               hint: Padding(
@@ -56,22 +52,25 @@ class _MaritalStatusState extends State<MaritalStatus> {
                   style: Theme.of(context).inputDecorationTheme.hintStyle,
                 ),
               ),
-              items: MaritalStatu.values
-                  .map((MaritalStatu maritalSt) =>
-                      DropdownMenuItem<MaritalStatu>(
-                        value: maritalSt,
-                        child: Text(
-                          maritalSt.toString().split('.').last,
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelMedium
-                              ?.copyWith(
-                                color: Theme.of(context).colorScheme.primary,
-                                fontWeight: FontWeight.w400,
+              items:
+                  MaritalStatu.values
+                      .map(
+                        (MaritalStatu maritalSt) =>
+                            DropdownMenuItem<MaritalStatu>(
+                              value: maritalSt,
+                              child: Text(
+                                maritalSt.toString().split('.').last,
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.labelMedium?.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.onSecondary,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
-                        ),
-                      ))
-                  .toList(),
+                            ),
+                      )
+                      .toList(),
               value: selectedMaritalStatu,
               onChanged: (MaritalStatu? value) {
                 print(value);
@@ -90,21 +89,18 @@ class _MaritalStatusState extends State<MaritalStatus> {
                 padding: EdgeInsetsDirectional.all(4),
                 width: 2.sw,
                 decoration: BoxDecoration(
-                  border: selectedMaritalStatu != null
-                      ? Border.all(
-                          color: Theme.of(context).colorScheme.tertiary,
-                        )
-                      : Border.all(
-                          color: Colors.transparent,
-                        ),
+                  border:
+                      selectedMaritalStatu != null
+                          ? Border.all(
+                            color: Theme.of(context).colorScheme.primary,
+                          )
+                          : Border.all(color: Colors.transparent),
                   borderRadius: BorderRadius.circular(4),
                   shape: BoxShape.rectangle,
                   color: Theme.of(context).colorScheme.surfaceContainerHigh,
                 ),
               ),
-              menuItemStyleData: MenuItemStyleData(
-                height: .05.sh,
-              ),
+              menuItemStyleData: MenuItemStyleData(height: .05.sh),
             ),
           ),
         ),

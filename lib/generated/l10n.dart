@@ -679,6 +679,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Announcements `
+  String get announcements {
+    return Intl.message(
+      'Announcements ',
+      name: 'announcements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming Events`
+  String get upcomingEvents {
+    return Intl.message(
+      'Upcoming Events',
+      name: 'upcomingEvents',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

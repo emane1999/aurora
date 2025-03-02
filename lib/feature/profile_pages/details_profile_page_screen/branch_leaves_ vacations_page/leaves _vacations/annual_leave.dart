@@ -13,7 +13,12 @@ class AnnualLeave extends StatelessWidget {
   Widget build(BuildContext context) {
     return CardCom(
       children: [
-        Text(name, style: Theme.of(context).textTheme.displaySmall),
+        Text(
+          name,
+          style: Theme.of(
+            context,
+          ).textTheme.displayMedium?.copyWith(fontSize: 18.sp),
+        ),
         4.verticalSpace,
         Divider(
           color: BORDER_PRIMARY.light,
@@ -25,10 +30,9 @@ class AnnualLeave extends StatelessWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/today.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.calendar_today,
+              color: Theme.of(context).colorScheme.primary,
             ),
             DetailsRequst(tite: 'Up to Date Balance:', subTite: '2.46 days'),
           ],
@@ -36,10 +40,9 @@ class AnnualLeave extends StatelessWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/today.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.calendar_today,
+              color: Theme.of(context).colorScheme.primary,
             ),
             DetailsRequst(tite: 'Leaves Used:', subTite: ' 0 days'),
           ],
@@ -47,10 +50,9 @@ class AnnualLeave extends StatelessWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/today.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.calendar_today,
+              color: Theme.of(context).colorScheme.primary,
             ),
             DetailsRequst(tite: 'Total Year Balance:', subTite: '5.27 days'),
           ],

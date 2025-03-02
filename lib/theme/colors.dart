@@ -1,5 +1,6 @@
-import 'package:aurora/theme/all_color.dart';
 import 'package:flutter/material.dart';
+
+import 'all_color.dart';
 
 // Surface Themes
 const ColorThemes SURFACE_BASE = ColorThemes(light: GRAY_50, dark: GRAY_800);
@@ -21,15 +22,9 @@ const ColorThemes SURFACE_NAV = ColorThemes(
 );
 
 // Text Themes
-const ColorThemes TEXT_PRIMARY = ColorThemes(light: NAVY_300, dark: GRAY_50);
-const ColorThemes TEXT_SECONDARY = ColorThemes(
-  light: OCEAN_BLUE_300,
-  dark: NAVY_100,
-);
-const ColorThemes TEXT_TERTIARY = ColorThemes(
-  light: NAVY_250,
-  dark: OCEAN_BLUE_150,
-);
+const ColorThemes TEXT_PRIMARY = ColorThemes(light: NAVY_50, dark: GRAY_50);
+const ColorThemes TEXT_SECONDARY = ColorThemes(light: NAVY_100, dark: NAVY_100);
+const ColorThemes TEXT_TERTIARY = ColorThemes(light: NAVY_100, dark: NAVY_100);
 const ColorThemes TEXT_ERROR = ColorThemes(light: RED_100, dark: RED_50);
 const ColorThemes TEXT_DISABLED = ColorThemes(light: GRAY_400, dark: GRAY_550);
 

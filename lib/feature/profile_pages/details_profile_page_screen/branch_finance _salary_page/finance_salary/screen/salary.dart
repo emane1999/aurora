@@ -28,7 +28,12 @@ class _SalaryState extends State<Salary> {
       children: [
         Row(
           children: [
-            Text("Salary", style: Theme.of(context).textTheme.displaySmall),
+            Text(
+              "Salary",
+              style: Theme.of(
+                context,
+              ).textTheme.displaySmall?.copyWith(fontWeight: FontWeight.w600),
+            ),
             Spacer(),
             IconButton(
               onPressed: () {
@@ -67,6 +72,10 @@ class _SalaryState extends State<Salary> {
                         'assets/images/currencyCoinDollar.svg',
                         width: 24.w,
                         height: 24.w,
+                        colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.primary,
+                          BlendMode.srcIn, // Color the SVG
+                        ),
                       ),
                       DetailsRequst(tite: 'Total Salary:', subTite: '\$2000'),
                     ],
@@ -78,6 +87,10 @@ class _SalaryState extends State<Salary> {
                         'assets/images/discountCircle.svg',
                         width: 24.w,
                         height: 24.w,
+                        colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.primary,
+                          BlendMode.srcIn, // Color the SVG
+                        ),
                       ),
                       DetailsRequst(
                         tite: 'Social Security:',
@@ -92,6 +105,10 @@ class _SalaryState extends State<Salary> {
                         'assets/images/receiptLines.svg',
                         width: 24.w,
                         height: 24.w,
+                        colorFilter: ColorFilter.mode(
+                          Theme.of(context).colorScheme.primary,
+                          BlendMode.srcIn, // Color the SVG
+                        ),
                       ),
                       DetailsRequst(tite: 'Basic Salary:', subTite: '\$1860'),
                     ],
@@ -107,6 +124,10 @@ class _SalaryState extends State<Salary> {
                   children: [
                     SvgPicture.asset(
                       'assets/images/currencyCoinDollar.svg',
+                      colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.primary,
+                        BlendMode.srcIn, // Color the SVG
+                      ),
                       width: 24.w,
                       height: 24.w,
                     ),
@@ -118,6 +139,10 @@ class _SalaryState extends State<Salary> {
                   children: [
                     SvgPicture.asset(
                       'assets/images/discountCircle.svg',
+                      colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.primary,
+                        BlendMode.srcIn, // Color the SVG
+                      ),
                       width: 24.w,
                       height: 24.w,
                     ),
@@ -132,6 +157,10 @@ class _SalaryState extends State<Salary> {
                   children: [
                     SvgPicture.asset(
                       'assets/images/receiptLines.svg',
+                      colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.primary,
+                        BlendMode.srcIn, // Color the SVG
+                      ),
                       width: 24.w,
                       height: 24.w,
                     ),

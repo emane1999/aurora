@@ -46,9 +46,8 @@ class Aurora extends ConsumerWidget {
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
       routeInformationProvider: router.routeInformationProvider,
-      theme: themeP.lightThemeData,
-
-      // darkTheme: themeP.darkThemeData,
+      theme: themeP.lightThemeData, // Use the light theme data
+      darkTheme: themeP.darkThemeData, // Use the dark theme data
       themeMode: themeState,
       debugShowCheckedModeBanner: false,
       locale: appLocaleState,

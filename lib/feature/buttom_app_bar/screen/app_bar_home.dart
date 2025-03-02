@@ -1,4 +1,5 @@
 import 'package:aurora/feature/buttom_app_bar/model/destination.dart';
+import 'package:aurora/theme/all_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,16 +37,36 @@ class AppBarHome extends StatelessWidget {
       ),
       appBar: PreferredSize(
         child: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.primary,
+          backgroundColor:
+              Theme.of(context).brightness == Brightness.dark
+                  ? NAVY_50
+                  // Dark mode background color
+                  : Theme.of(context).colorScheme.primary,
           leading: FittedBox(
             fit: BoxFit.scaleDown,
             child: Column(
               children: [
                 16.verticalSpace,
-                SvgPicture.asset(
-                  'assets/images/logo.svg',
-                  width: 61.w,
-                  height: 37.w,
+                Row(
+                  children: [
+                    16.horizontalSpace,
+                    SvgPicture.asset(
+                      'assets/images/BrandLogos.svg',
+                      width: 60.w,
+                      height: 37.w,
+                    ),
+                    12.horizontalSpace,
+                    Text(
+                      "aurora",
+                      style: Theme.of(
+                        context,
+                      ).textTheme.displayMedium?.copyWith(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
+                        color: TechnoWhite,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -58,14 +79,8 @@ class AppBarHome extends StatelessWidget {
                 spacing: 16.w,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.search,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                  Icon(
-                    Icons.dashboard,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
+                  Icon(Icons.search, color: GRAY_50),
+                  Icon(Icons.notifications_none, color: GRAY_50),
                 ],
               ),
             ),

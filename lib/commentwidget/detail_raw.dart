@@ -4,29 +4,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DetailRaw extends StatelessWidget {
-  final String images;
+  final Icon images;
   final String tite;
-  const DetailRaw({
-    Key? key,
-    required this.images,
-    required this.tite,
-  }) : super(key: key);
+  const DetailRaw({Key? key, required this.images, required this.tite})
+    : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       spacing: 8.w,
       children: [
-        SvgPicture.asset(
-          images,
-          width: 24.w,
-          height: 24.w,
-        ),
+        images,
         Text(
           tite,
           style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                color: Theme.of(context).colorScheme.onSecondary,
-              ),
+            color: Theme.of(context).colorScheme.onSecondary,
+          ),
         ),
       ],
     );

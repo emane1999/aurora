@@ -19,116 +19,73 @@ class MyDoc extends StatelessWidget {
           child: Column(
             children: [
               ExpandablePanel(
-                  theme: ExpandableThemeData(
-                      iconColor: Theme.of(context).colorScheme.primary,
-                      animationDuration: const Duration(milliseconds: 500)),
-                  header: Row(
-                    spacing: 8,
-                    children: [
-                      SvgPicture.asset(
-                        'assets/images/note.svg',
-                        width: 24.w,
-                        height: 24.w,
+                theme: ExpandableThemeData(
+                  iconColor: Theme.of(context).colorScheme.primary,
+                  animationDuration: const Duration(milliseconds: 500),
+                ),
+                header: Row(
+                  spacing: 8,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/images/File6.svg',
+                      width: 24.w,
+                      height: 24.w,
+                      colorFilter: ColorFilter.mode(
+                        Theme.of(context).colorScheme.primary,
+                        BlendMode.srcIn, // Color the SVG
                       ),
-                      Text(
-                        docType,
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelMedium
-                            ?.copyWith(
-                                fontWeight: FontWeight.w300,
-                                color:
-                                    Theme.of(context).colorScheme.onSecondary),
+                    ),
+                    Text(
+                      docType,
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                        fontWeight: FontWeight.w300,
+                        color: Theme.of(context).colorScheme.onSecondary,
                       ),
-                    ],
-                  ),
-                  collapsed: SizedBox(),
-                  expanded: Column(
-                    spacing: 10,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            "Medical Insurance",
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                ),
-                          ),
-                          Spacer(),
-                          SvgPicture.asset(
-                            'assets/images/downlaod.svg',
-                            width: 24.w,
-                            height: 24.w,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "National ID Card",
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                ),
-                          ),
-                          Spacer(),
-                          SvgPicture.asset(
-                            'assets/images/downlaod.svg',
-                            width: 24.w,
-                            height: 24.w,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "Non-Criminal Record Certificate",
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                ),
-                          ),
-                          Spacer(),
-                          SvgPicture.asset(
-                            'assets/images/downlaod.svg',
-                            width: 24.w,
-                            height: 24.w,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "Passport",
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                ),
-                          ),
-                          Spacer(),
-                          SvgPicture.asset(
-                            'assets/images/downlaod.svg',
-                            width: 24.w,
-                            height: 24.w,
-                          ),
-                        ],
-                      ),
-                      10.verticalSpace
-                    ],
-                  )),
+                    ),
+                  ],
+                ),
+                collapsed: SizedBox(),
+                expanded: Column(
+                  spacing: 10,
+                  children: [
+                    Listcompent(context, "Medical Insurance"),
+
+                    Listcompent(context, "National ID Card"),
+                    Listcompent(context, "Non-Criminal Record Certificate"),
+
+                    Listcompent(context, "Passport"),
+                    10.verticalSpace,
+                  ],
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+Widget Listcompent(BuildContext context, String title) {
+  return Padding(
+    padding: const EdgeInsetsDirectional.only(
+      start: 16,
+      end: 16,
+      top: 10,
+      bottom: 10,
+    ),
+
+    child: Row(
+      children: [
+        Text(
+          title,
+          style: Theme.of(
+            context,
+          ).textTheme.labelMedium?.copyWith(fontWeight: FontWeight.w400),
+        ),
+        Spacer(),
+        Icon(Icons.file_download, color: Theme.of(context).colorScheme.primary),
+      ],
+    ),
+  );
 }

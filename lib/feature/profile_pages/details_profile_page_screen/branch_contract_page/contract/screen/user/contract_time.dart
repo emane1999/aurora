@@ -26,10 +26,9 @@ class ContractTimeWidget extends StatelessWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/today.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.calendar_today,
+              color: Theme.of(context).colorScheme.primary,
             ),
             DetailsRequst(
               tite: 'Start Date:',
@@ -41,10 +40,9 @@ class ContractTimeWidget extends StatelessWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/today.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.calendar_today,
+              color: Theme.of(context).colorScheme.primary,
             ),
             DetailsRequst(
               tite: 'End Date:',
@@ -56,10 +54,9 @@ class ContractTimeWidget extends StatelessWidget {
         Row(
           spacing: 12,
           children: [
-            SvgPicture.asset(
-              'assets/images/today.svg',
-              width: 24.w,
-              height: 24.w,
+            Icon(
+              Icons.calendar_today,
+              color: Theme.of(context).colorScheme.primary,
             ),
             DetailsRequst(
               tite: 'Contract Period:',
@@ -73,6 +70,10 @@ class ContractTimeWidget extends StatelessWidget {
           children: [
             SvgPicture.asset(
               'assets/images/status.svg',
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).colorScheme.primary,
+                BlendMode.srcIn, // Color the SVG
+              ),
               width: 20.w,
               height: 20.w,
             ),

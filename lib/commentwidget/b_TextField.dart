@@ -46,17 +46,27 @@ class BTextField extends ConsumerWidget {
       children: [
         Text(
           lable ?? "",
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-            fontWeight:
-                isfontWeights ?? false ? FontWeight.w300 : FontWeight.w500,
-          ),
+          style:
+              isfontWeights ?? true
+                  ? Theme.of(context).textTheme.labelSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    fontFamily: 'AllRoundGothic',
+                  )
+                  : Theme.of(
+                    context,
+                  ).textTheme.labelSmall?.copyWith(fontSize: 14.sp),
         ),
         8.verticalSpace,
         TextFormField(
           enabled: true,
           obscuringCharacter: obscuringCharacter ?? ".",
           style: Theme.of(context).textTheme.labelSmall?.copyWith(
-            color: Theme.of(context).colorScheme.onTertiary,
+            color:
+                Theme.of(context).brightness == Brightness.dark
+                    ? Theme.of(context).colorScheme.primary
+                    // Dark mode background color
+                    : Theme.of(context).colorScheme.onTertiary,
+            fontWeight: FontWeight.w400,
           ),
           controller: controller,
           focusNode: focusNode,
@@ -67,7 +77,7 @@ class BTextField extends ConsumerWidget {
               borderSide: BorderSide(
                 color:
                     formState.error(statetext) == null
-                        ? Theme.of(context).colorScheme.onTertiary
+                        ? Theme.of(context).colorScheme.tertiary
                         : Colors.transparent,
               ),
             ),
@@ -100,7 +110,7 @@ class BTextField extends ConsumerWidget {
                   controller!.text.isEmpty
                       ? BorderSide(color: Colors.transparent)
                       : BorderSide(
-                        color: Theme.of(context).colorScheme.onTertiary,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
             ),
           ),

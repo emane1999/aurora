@@ -1,7 +1,7 @@
 import 'package:aurora/shared_prefs/app_shared_prefs.dart';
-import 'package:aurora/theme/global_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'global_theme.dart';
 part 'global_theme_providers.g.dart';
 
 @riverpod
@@ -21,8 +21,11 @@ class ThemeState extends _$ThemeState {
   }
 
   void setTheme({ThemeMode? mode}) {
+    // Toggle or set the specified theme mode
     state =
         mode ?? (state == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark);
+
+    // Save the selected theme mode to SharedPreferences
     AppSharedPrefs().updateThemeMode(state);
   }
 }

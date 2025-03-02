@@ -36,7 +36,10 @@ class RequestsDetails extends StatelessWidget {
             FilledButton(
               style: Theme.of(context).filledButtonTheme.style?.copyWith(
                 backgroundColor: WidgetStateProperty.all(
-                  Theme.of(context).colorScheme.tertiary,
+                  Theme.of(context).brightness == Brightness.dark
+                      ? Theme.of(context).colorScheme.tertiary
+                      // Dark mode background color
+                      : Theme.of(context).colorScheme.onSecondary,
                 ),
                 shape: WidgetStateProperty.all(
                   RoundedRectangleBorder(
@@ -59,7 +62,7 @@ class RequestsDetails extends StatelessWidget {
                   spacing: 8,
                   children: [
                     Icon(
-                      Icons.account_balance_sharp,
+                      Icons.filter_list,
                       color: Theme.of(context).colorScheme.surfaceContainerHigh,
                     ),
                     Text(
@@ -104,11 +107,6 @@ class RequestsDetails extends StatelessWidget {
                   ),
                   12.verticalSpace,
                   ExpandableWidegs(colorchange: false),
-                  4.verticalSpace,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [BSecButton(text: S.of(context).viewMore)],
-                  ),
                 ],
               ),
               24.verticalSpace,
@@ -136,11 +134,6 @@ class RequestsDetails extends StatelessWidget {
                   ),
                   12.verticalSpace,
                   ExpandableWidegs(colorchange: true),
-                  4.verticalSpace,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [BSecButton(text: S.of(context).viewMore)],
-                  ),
                 ],
               ),
             ],

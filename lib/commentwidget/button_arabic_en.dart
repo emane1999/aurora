@@ -6,8 +6,8 @@ import 'package:flutter_svg/svg.dart';
 
 class ButtonArabicEn extends ConsumerWidget {
   TextStyle? style;
-  String svgPicture;
-  ButtonArabicEn({super.key, required this.style, required this.svgPicture});
+  Icon? icons;
+  ButtonArabicEn({super.key, required this.style, required this.icons});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -27,7 +27,7 @@ class ButtonArabicEn extends ConsumerWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SvgPicture.asset(svgPicture, width: 75.w, height: 20.w),
+              icons!,
               SizedBox(width: 8),
               Text(
                 ref.read(appLanguageStateProvider).languageCode == 'en'

@@ -21,10 +21,10 @@ class MeetingDetails extends StatelessWidget {
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.10.sh),
+        preferredSize: Size.fromHeight(.07.sh),
         child: HeaderOfEachBranch(
           title: S.of(context).meetings,
-          preferredSize: Size.fromHeight(.10.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: SingleChildScrollView(
@@ -42,15 +42,25 @@ class MeetingDetails extends StatelessWidget {
               HeadingAllText(indexToSearch: 8),
               PersonDes(detail: "Technical Lead"),
               DetailRaw(
-                images: 'assets/images/today.svg',
+                images: Icon(
+                  Icons.today,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
                 tite: "15 May 2024 - Wednesday",
               ),
               DetailRaw(
-                images: 'assets/images/clock_in.svg',
+                images: Icon(
+                  Icons.history,
+                  size: 25,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
                 tite: "9:00 am - Eastern Time (ET)",
               ),
               DetailRaw(
-                images: 'assets/images/Group.svg',
+                images: Icon(
+                  Icons.place,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
                 tite: "Online - Microsoft Teams",
               ),
               CardCom(
@@ -58,10 +68,9 @@ class MeetingDetails extends StatelessWidget {
                   ListTile(
                     title: Row(
                       children: [
-                        SvgPicture.asset(
-                          'assets/images/note.svg',
-                          width: 24.w,
-                          height: 24.w,
+                        Icon(
+                          Icons.comment_outlined,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                         10.horizontalSpace,
                         Text(
@@ -121,6 +130,12 @@ class MeetingDetails extends StatelessWidget {
                   BError(text: S.of(context).cancelMeeting),
                   FilledButton(
                     style: Theme.of(context).filledButtonTheme.style?.copyWith(
+                      backgroundColor: WidgetStatePropertyAll(
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Theme.of(context).colorScheme.tertiary
+                            // Dark mode background color
+                            : Theme.of(context).colorScheme.onSecondary,
+                      ),
                       padding: WidgetStatePropertyAll(
                         EdgeInsetsDirectional.only(
                           start: 16.w,
@@ -137,8 +152,14 @@ class MeetingDetails extends StatelessWidget {
                         softWrap: true,
                         overflow: TextOverflow.ellipsis,
                         S.of(context).rescheduleMeeting,
-                        style: Theme.of(context).textTheme.labelMedium
-                            ?.copyWith(fontWeight: FontWeight.w500),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.labelMedium?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12.sp,
+                          color:
+                              Theme.of(context).colorScheme.onPrimaryContainer,
+                        ),
                       ),
                     ),
                   ),

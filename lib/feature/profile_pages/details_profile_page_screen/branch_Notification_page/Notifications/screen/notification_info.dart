@@ -45,12 +45,12 @@ class _NotificationInfoState extends State<NotificationInfo>
               ),
               controller: tabController,
               unselectedLabelColor: Theme.of(context).colorScheme.primary,
-              unselectedLabelStyle: Theme.of(
-                context,
-              ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w200),
-              labelStyle: Theme.of(
-                context,
-              ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w500),
+              unselectedLabelStyle: Theme.of(context).textTheme.displayMedium
+                  ?.copyWith(fontWeight: FontWeight.w300, fontSize: 16.sp),
+              labelStyle: Theme.of(context).textTheme.displayMedium?.copyWith(
+                fontWeight: FontWeight.w600,
+                fontSize: 16.sp,
+              ),
               indicator: UnderlineTabIndicator(
                 borderSide: BorderSide(
                   width: 2.0,
@@ -92,7 +92,7 @@ class _NotificationInfoState extends State<NotificationInfo>
               'Notifications',
               style: Theme.of(
                 context,
-              ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w300),
+              ).textTheme.displayMedium?.copyWith(fontSize: 16.sp),
             ),
           ],
         ),

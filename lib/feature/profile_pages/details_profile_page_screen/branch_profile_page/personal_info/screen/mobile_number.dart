@@ -22,7 +22,13 @@ class _MobileNumberState extends ConsumerState<MobileNumber> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Mobile Number", style: Theme.of(context).textTheme.labelSmall),
+        Text(
+          "Mobile Number",
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontFamily: 'AllRoundGothic',
+            fontWeight: FontWeight.w600,
+          ),
+        ),
         Row(
           children: [
             CountryDropdownPro(),
@@ -30,7 +36,7 @@ class _MobileNumberState extends ConsumerState<MobileNumber> {
               flex: 1,
               child: TextFormField(
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: Theme.of(context).colorScheme.onTertiary,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 controller: _mobileNumberController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -41,7 +47,7 @@ class _MobileNumberState extends ConsumerState<MobileNumber> {
                     borderSide: BorderSide(
                       color:
                           formState.error('MobileNumber') != null
-                              ? Theme.of(context).colorScheme.onTertiary
+                              ? Theme.of(context).colorScheme.primary
                               : Colors.transparent,
                     ),
                   ),
@@ -72,7 +78,7 @@ class _MobileNumberState extends ConsumerState<MobileNumber> {
                         _mobileNumberController!.text.isEmpty
                             ? BorderSide(color: Colors.transparent)
                             : BorderSide(
-                              color: Theme.of(context).colorScheme.onTertiary,
+                              color: Theme.of(context).colorScheme.primary,
                             ),
                   ),
                 ),

@@ -62,10 +62,10 @@ class OrganizationalInfoUser extends StatelessWidget {
     ];*/
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(.10.sh), // Set the height of the app bar
+        preferredSize: Size.fromHeight(.07.sh), // Set the height of the app bar
         child: HeaderOfEachBranch(
           title: 'Organizational Info',
-          preferredSize: Size.fromHeight(.10.sh),
+          preferredSize: Size.fromHeight(.07.sh),
         ),
       ),
       body: RawScrollbar(
@@ -104,7 +104,7 @@ class OrganizationalInfoUser extends StatelessWidget {
                   FilledButton(
                     style: Theme.of(context).filledButtonTheme.style?.copyWith(
                       backgroundColor: WidgetStateProperty.all(
-                        Theme.of(context).colorScheme.tertiary,
+                        Theme.of(context).colorScheme.onSecondary,
                       ),
                       shape: WidgetStateProperty.all(
                         RoundedRectangleBorder(

@@ -37,14 +37,17 @@ class PersonDes extends StatelessWidget {
                   height: 32,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: NAVY_200,
+                    color:
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Theme.of(context).colorScheme.tertiary
+                            : Theme.of(context).colorScheme.onSecondary,
                   ),
                   child: IconButton(
                     onPressed: () {},
                     padding: EdgeInsets.zero,
                     icon: Icon(
                       Icons.edit,
-                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -58,7 +61,7 @@ class PersonDes extends StatelessWidget {
               "John Doe",
               style: Theme.of(
                 context,
-              ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w600),
+              ).textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w700),
             ),
             8.verticalSpace,
             Text(

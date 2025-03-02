@@ -31,18 +31,19 @@ class _NationalityState extends State<Nationality> {
       children: [
         Text(
           "Nationality",
-          style: Theme.of(context).textTheme.labelSmall,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            fontFamily: 'AllRoundGothic',
+            fontWeight: FontWeight.w600,
+          ),
         ),
         8.verticalSpace,
         Center(
           child: DropdownButtonHideUnderline(
             child: DropdownButton2<Nationalites>(
               iconStyleData: IconStyleData(
-                icon: Icon(
-                  Icons.arrow_drop_down,
-                ),
+                icon: Icon(Icons.arrow_drop_down),
                 iconSize: 24,
-                iconEnabledColor: Theme.of(context).colorScheme.onTertiary,
+                iconEnabledColor: Theme.of(context).colorScheme.primary,
               ),
               isExpanded: true,
               hint: Padding(
@@ -52,21 +53,23 @@ class _NationalityState extends State<Nationality> {
                   style: Theme.of(context).inputDecorationTheme.hintStyle,
                 ),
               ),
-              items: Nationalites.values
-                  .map((Nationalites gender) => DropdownMenuItem<Nationalites>(
-                        value: gender,
-                        child: Text(
-                          gender.toString().split('.').last,
-                          style: Theme.of(context)
-                              .textTheme
-                              .labelMedium
-                              ?.copyWith(
-                                color: Theme.of(context).colorScheme.primary,
-                                fontWeight: FontWeight.w400,
-                              ),
+              items:
+                  Nationalites.values
+                      .map(
+                        (Nationalites gender) => DropdownMenuItem<Nationalites>(
+                          value: gender,
+                          child: Text(
+                            gender.toString().split('.').last,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.labelMedium?.copyWith(
+                              color: Theme.of(context).colorScheme.onSecondary,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                         ),
-                      ))
-                  .toList(),
+                      )
+                      .toList(),
               value: selectedNationalites,
               onChanged: (Nationalites? value) {
                 setState(() {
@@ -84,20 +87,17 @@ class _NationalityState extends State<Nationality> {
                 padding: EdgeInsetsDirectional.all(4),
                 width: 1.sw,
                 decoration: BoxDecoration(
-                  border: selectedNationalites != null
-                      ? Border.all(
-                          color: Theme.of(context).colorScheme.tertiary,
-                        )
-                      : Border.all(
-                          color: Colors.transparent,
-                        ),
+                  border:
+                      selectedNationalites != null
+                          ? Border.all(
+                            color: Theme.of(context).colorScheme.primary,
+                          )
+                          : Border.all(color: Colors.transparent),
                   borderRadius: BorderRadius.circular(4),
                   color: Theme.of(context).colorScheme.surfaceContainerHigh,
                 ),
               ),
-              menuItemStyleData: MenuItemStyleData(
-                height: .05.sh,
-              ),
+              menuItemStyleData: MenuItemStyleData(height: .05.sh),
             ),
           ),
         ),
