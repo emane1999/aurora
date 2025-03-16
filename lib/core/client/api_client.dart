@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_contract_page/contract/model/contract_response_model.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_organizational_page/organizational_onfo/model/organizational_response_model.dart';
 import 'package:aurora/feature/profile_pages/details_profile_page_screen/branch_profile_page/personal_info/models/profile_info_response_model.dart';
